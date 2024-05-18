@@ -110,6 +110,10 @@ function OrderReports() {
   const [elements, setElements] = React.useState(returnElements(arrOfOrders));
   // MAKE DROPDOWN VISIBLE state
   const [dropDown, setDropDown] = React.useState(false);
+
+  // Q1: Dropdown kismi sadece Filter buttonuna tikladigimda kapaniyor,
+  // baska bir yere tikladigimda kapanmasini nasil yapa bilirim ?
+
   // CHANGE category STATE { all, preparing, pending, completed}
   const [category, setCategory] = React.useState("all");
 
@@ -123,16 +127,18 @@ function OrderReports() {
 
   // CHANGING THE LIST OF ORDERS BY THEIR STATUS
   useEffect(() => {
+    console.log("run");
+    // q2: IKi kere run printlemesinin sebebi StrictMode mu ?
     if (category === "all") {
-      setElements((prev) => returnElements(arrOfOrders));
-      return;
+      setElements(returnElements(arrOfOrders));
     } else {
       let arr = arrOfOrders.filter((a) => a.status === category);
-      setElements((prev) => returnElements(arr));
+      setElements(returnElements(arr));
     }
   }, [category]);
 
   return (
+    // Containerin height i ni limitleyip scroll ekle.
     <div className="order-report-container">
       <div className="order-report-header">
         <h3>Order Report</h3>
