@@ -138,7 +138,6 @@ function OrderReports() {
   }, [category]);
 
   return (
-    // Containerin height i ni limitleyip scroll ekle.
     <div className="order-report-container">
       <div className="order-report-header">
         <h3>Order Report</h3>
