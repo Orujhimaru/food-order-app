@@ -24,6 +24,7 @@ function returnElements(array) {
 }
 
 function OrderReports() {
+  console.log("render");
   // Orders array state
   const [elements, setElements] = React.useState(returnElements(arrOfOrders));
   // MAKE DROPDOWN VISIBLE state
@@ -53,6 +54,7 @@ function OrderReports() {
       let arr = arrOfOrders.filter((a) => a.status === category);
       setElements(returnElements(arr));
     }
+    setDropdownVisible();
   }, [category]);
 
   return (
@@ -67,6 +69,7 @@ function OrderReports() {
             Filter Order
           </button>
           {dropDown && <DropdownFilter setCat={setCat} />}
+          {/* BU DOGRU MU ? DROPDOWN DEGISTIGINDE TUM ORDERCOMPONENET yeniden renderlaniyor. */}
         </div>
       </div>
 
