@@ -4,3 +4,9 @@
   @extend %main-container;
   position: relative;
 }
+
+.mainContent {
+  height: 100vh;
+  min-width: 600px;
+  max-width: 55vw;
+}

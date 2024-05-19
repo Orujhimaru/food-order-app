@@ -7,9 +7,12 @@ function HomePage() {
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <h1>Homepage example</h1>
-        {/* {Compound componenet olarak Order Reportsu children olarak passlememiz gerekir mi ?} */}
-        <OrderReports />
+        <div className="mainContent">
+          {/* TEMPORARY DIV FOR SPACING 
+          Dashboard Analytics Header*/}
+          <div style={{ height: "200px" }}></div>
+          <OrderReports />
+        </div>
       </div>
     </div>
   );

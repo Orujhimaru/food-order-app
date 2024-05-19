@@ -55,7 +55,17 @@ function OrderReports() {
         </div>
       </div>
 
-      <div className="order-reports">{elements}</div>
+      <div className="order-reports">
+        <div className="order-report">
+          <div className="flex-start">Customer</div>
+          <div className="flex-start">Menu</div>
+          <div className="flex-start">Total Payment</div>
+          <div className="flex-end" style={{ marginRight: "50px" }}>
+            Status
+          </div>
+        </div>
+        {elements}
+      </div>
     </div>
   );
 }
