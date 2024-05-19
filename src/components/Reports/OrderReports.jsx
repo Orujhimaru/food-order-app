@@ -24,21 +24,11 @@ function returnElements(array) {
 }
 
 function OrderReports() {
-  console.log("render");
+  console.log("render ALL");
   // Orders array state
   const [elements, setElements] = React.useState(returnElements(arrOfOrders));
-  // MAKE DROPDOWN VISIBLE state
-  const [dropDown, setDropDown] = React.useState(false);
-  // Q1: Dropdown kismi sadece Filter buttonuna tikladigimda kapaniyor,
-  // baska bir yere tikladigimda kapanmasini nasil yapa bilirim ?
-  // Q2: USE REF NEREDE KULLANILIR ?
-
   // CHANGE category STATE { all, preparing, pending, completed}
   const [category, setCategory] = React.useState("all");
-
-  function setDropdownVisible() {
-    setDropDown((visible) => !visible);
-  }
 
   function setCat(newValue) {
     setCategory(newValue);
@@ -46,7 +36,7 @@ function OrderReports() {
 
   // CHANGING THE LIST OF ORDERS BY THEIR STATUS
   useEffect(() => {
-    console.log("run");
+    console.log("run effect");
     // q3: IKi kere run printlemesinin sebebi StrictMode mu ?
     if (category === "all") {
       setElements(returnElements(arrOfOrders));
@@ -54,7 +44,6 @@ function OrderReports() {
       let arr = arrOfOrders.filter((a) => a.status === category);
       setElements(returnElements(arr));
     }
-    setDropdownVisible();
   }, [category]);
 
   return (
@@ -62,14 +51,7 @@ function OrderReports() {
       <div className="order-report-header">
         <h3>Order Report</h3>
         <div className="positioning">
-          <button
-            className="order-report-filter-btn"
-            onClick={setDropdownVisible}
-          >
-            Filter Order
-          </button>
-          {dropDown && <DropdownFilter setCat={setCat} />}
-          {/* BU DOGRU MU ? DROPDOWN DEGISTIGINDE TUM ORDERCOMPONENET yeniden renderlaniyor. */}
+          <DropdownFilter setCat={setCat} />
         </div>
       </div>
 
