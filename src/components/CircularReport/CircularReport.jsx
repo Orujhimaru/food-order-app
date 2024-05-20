@@ -46,6 +46,27 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
         <div ref={ref2} className="inner-3"></div>
         <div ref={ref3} className="inner-4"></div>
       </div>
+      <div className="order-stats">
+        <div className="order-stat">
+          <div className="stat-indicator-pink"></div>
+          <h3>
+            Dine In <br /> {dineIn} customers
+          </h3>
+        </div>
+        <div className="order-stat">
+          <div className="stat-indicator-blue"></div>
+          <h3>
+            To Go
+            <br /> {toGo} customers
+          </h3>
+        </div>
+        <div className="order-stat">
+          <div className="stat-indicator-yellow"></div>
+          <h3>
+            Delivery <br /> {delivery} customers
+          </h3>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,13 +1,15 @@
 .circular-report-container {
-  width: 370px;
-  height: 350px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 10px;
+  gap: 6px;
 }
 
 .flex {
+  width: 370px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,6 +72,41 @@
   transform: translate(-50%, -50%);
   background-position: 0px 0px;
   //   animation: animatedBackground 2s linear infinite alternate;
+}
+
+.order-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.order-stat {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.stat-indicator {
+  border-radius: 50%;
+  &-pink {
+    background-color: #ff7ca3;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  &-blue {
+    background-color: #65b0f6;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  &-yellow {
+    background-color: #ffb572;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
 }
 
 // INNER 2, 3 , 4 BACKGROUND WILL BE ANIMATED.
