@@ -7,6 +7,28 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
   const ref1 = useRef();
 
   const [count1, setCount1] = useState(0);
+  const [total, setTotal] = useState(delivery + toGo + dineIn);
+  // propslarda degisiklik olursa guncellenir mi ? useState icinde bulundurdugum icin.
+
+  let big =
+    toGo > dineIn && toGo > delivery
+      ? { name: "To Go", value: toGo }
+      : dineIn > toGo && dineIn > delivery
+      ? { name: "Dine In", value: dineIn }
+      : { name: "Delivery", value: delivery };
+  let mid =
+    toGo > dineIn && toGo < delivery
+      ? { name: "To Go", value: toGo }
+      : dineIn > toGo && dineIn < delivery
+      ? { name: "Dine In", value: dineIn }
+      : { name: "Delivery", value: delivery };
+  let sm =
+    toGo < dineIn && toGo < delivery
+      ? { name: "To Go", value: toGo }
+      : dineIn < toGo && dineIn < delivery
+      ? { name: "Dine In", value: dineIn }
+      : { name: "Delivery", value: delivery };
+  console.log(big.name + " " + mid.name + " " + sm.name);
 
   useEffect(() => {
     console.log(count1);
@@ -21,14 +43,13 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
       } else {
         setCount1(count1 + 1);
       }
-
-      if (count1 < delivery) {
+      if (count1 < ((big.value * 100) / total) * 3.6) {
         ref3.current.style.background = `conic-gradient(#65B0F6 0deg, #65B0F6 ${count1}deg, #353440 ${count1}deg)`;
       }
-      if (count1 < toGo) {
+      if (count1 < ((mid.value * 100) / total) * 3.6) {
         ref2.current.style.background = `conic-gradient(#FFB572 0deg, #FFB572 ${count1}deg, #2A2836 ${count1}deg)`;
       }
-      if (count1 < dineIn) {
+      if (count1 < ((sm.value * 100) / total) * 3.6) {
         ref1.current.style.background = `conic-gradient(#FF7CA3 0deg, #FF7CA3 ${count1}deg, #353440 ${count1}deg)`;
       }
     }, 5);
@@ -50,20 +71,22 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
         <div className="order-stat">
           <div className="stat-indicator-pink"></div>
           <h3>
-            Dine In <br /> {dineIn} customers
+            {sm.name}
+            <br /> {sm.value} customers
           </h3>
         </div>
         <div className="order-stat">
           <div className="stat-indicator-blue"></div>
           <h3>
-            To Go
-            <br /> {toGo} customers
+            {big.name}
+            <br /> {big.value} customers
           </h3>
         </div>
         <div className="order-stat">
           <div className="stat-indicator-yellow"></div>
           <h3>
-            Delivery <br /> {delivery} customers
+            {mid.name}
+            <br /> {mid.value} customers
           </h3>
         </div>
       </div>
