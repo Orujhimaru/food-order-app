@@ -7,8 +7,8 @@ function HomePage() {
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <h1>Homepage example</h1>
-        <CircularReport />
+        <h1 style={{ display: "block" }}>Homepage example</h1>
+        <CircularReport delivery={150} toGo={250} dineIn={50} />
       </div>
     </div>
   );

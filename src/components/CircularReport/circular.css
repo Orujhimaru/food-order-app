@@ -1,0 +1,65 @@
+.circular-report-container {
+  width: 370px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner-1 {
+  background-color: #1f1d2b;
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+  border: 20px solid #2a2836;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-2 {
+  background-color: #353440;
+  width: 210px;
+  height: 210px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-3 {
+  background-color: #2a2836;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-4 {
+  background: conic-gradient(#6356f1 0deg, #6356f1 90deg, #353440 90deg);
+  width: 290px;
+  height: 290px;
+  border-radius: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: 0px 0px;
+}/*# sourceMappingURL=circular.css.map */
