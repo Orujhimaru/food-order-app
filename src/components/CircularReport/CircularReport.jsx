@@ -1,94 +1,143 @@
 import { useEffect, useState, useRef } from "react";
+import ApexCharts from "apexcharts";
 import "./circular.scss";
+import Chart from "react-apexcharts";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
-  const ref3 = useRef();
-  const ref2 = useRef();
-  const ref1 = useRef();
+  // let [total, setTotal] = useState(dineIn + delivery + toGo);
+  // state is not necessary here ?
+  let total = dineIn + delivery + toGo;
 
-  const [count1, setCount1] = useState(0);
-  const [total, setTotal] = useState(delivery + toGo + dineIn);
-  // propslarda degisiklik olursa guncellenir mi ? useState icinde bulundurdugum icin.
+  let series1 = [(delivery * 100) / total];
+  let series2 = [(toGo * 100) / total];
+  let series3 = [(dineIn * 100) / total];
 
-  let big =
-    toGo > dineIn && toGo > delivery
-      ? { name: "To Go", value: toGo }
-      : dineIn > toGo && dineIn > delivery
-      ? { name: "Dine In", value: dineIn }
-      : { name: "Delivery", value: delivery };
-  let mid =
-    toGo > dineIn && toGo < delivery
-      ? { name: "To Go", value: toGo }
-      : dineIn > toGo && dineIn < delivery
-      ? { name: "Dine In", value: dineIn }
-      : { name: "Delivery", value: delivery };
-  let sm =
-    toGo < dineIn && toGo < delivery
-      ? { name: "To Go", value: toGo }
-      : dineIn < toGo && dineIn < delivery
-      ? { name: "Dine In", value: dineIn }
-      : { name: "Delivery", value: delivery };
-  console.log(big.name + " " + mid.name + " " + sm.name);
+  let options1 = {
+    plotOptions: {
+      radialBar: {
+        track: {
+          background: "#353440",
+        },
+        hollow: {
+          margin: 15,
+          size: "70%",
+          // background: "#1F1D2B",
+        },
 
-  useEffect(() => {
-    console.log(count1);
-    let progress = setTimeout(() => {
-      //   if (count1 === delivery) {
-      //     return;
-      //   } else {
-      //     setCount(count1 + 1);
-      //   }
-      if (count1 === 360) {
-        return;
-      } else {
-        setCount1(count1 + 1);
-      }
-      if (count1 < ((big.value * 100) / total) * 3.6) {
-        ref3.current.style.background = `conic-gradient(#65B0F6 0deg, #65B0F6 ${count1}deg, #353440 ${count1}deg)`;
-      }
-      if (count1 < ((mid.value * 100) / total) * 3.6) {
-        ref2.current.style.background = `conic-gradient(#FFB572 0deg, #FFB572 ${count1}deg, #2A2836 ${count1}deg)`;
-      }
-      if (count1 < ((sm.value * 100) / total) * 3.6) {
-        ref1.current.style.background = `conic-gradient(#FF7CA3 0deg, #FF7CA3 ${count1}deg, #353440 ${count1}deg)`;
-      }
-    }, 5);
+        dataLabels: {
+          showOn: "always",
+          name: {
+            show: false,
+          },
 
-    return () => {
-      clearTimeout(progress);
-    };
-  });
+          value: {
+            show: false,
+          },
+        },
+      },
+    },
+
+    fill: {
+      colors: "#65B0F6",
+    },
+
+    stroke: {
+      lineCap: "butt",
+      // HOW DO I SET IT TO ROUND AT THE END AND BUTT AT THE START ????
+    },
+  };
+
+  let options2 = {
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          margin: 15,
+          size: "70%",
+        },
+        track: {
+          background: "#2A2836",
+        },
+
+        dataLabels: {
+          showOn: "always",
+          name: {
+            show: false,
+          },
+
+          value: {
+            show: false,
+          },
+        },
+      },
+    },
+    fill: {
+      colors: "#FFB572",
+    },
+    stroke: {
+      lineCap: "butt",
+    },
+  };
+
+  let options3 = {
+    plotOptions: {
+      radialBar: {
+        hollow: {
+          margin: 15,
+          size: "70%",
+        },
+        track: {
+          background: "#353440",
+        },
+
+        dataLabels: {
+          showOn: "always",
+          name: {
+            show: false,
+          },
+
+          value: {
+            show: false,
+          },
+        },
+      },
+    },
+    fill: {
+      colors: "#FF6996",
+    },
+    stroke: {
+      lineCap: "butt",
+    },
+  };
 
   return (
-    <div className="circular-report-container">
-      <div className="flex">
-        <div className="inner-1"></div>
-        <div ref={ref1} className="inner-2"></div>
-        <div ref={ref2} className="inner-3"></div>
-        <div ref={ref3} className="inner-4"></div>
+    <div className="donut">
+      <div className="inner-4"></div>
+      <div className="inner-1">
+        <Chart
+          options={options1}
+          series={series1}
+          type="radialBar"
+          width="356"
+          // width="680"
+        />
       </div>
-      <div className="order-stats">
-        <div className="order-stat">
-          <div className="stat-indicator-pink"></div>
-          <h3>
-            {sm.name}
-            <br /> {sm.value} customers
-          </h3>
-        </div>
-        <div className="order-stat">
-          <div className="stat-indicator-blue"></div>
-          <h3>
-            {big.name}
-            <br /> {big.value} customers
-          </h3>
-        </div>
-        <div className="order-stat">
-          <div className="stat-indicator-yellow"></div>
-          <h3>
-            {mid.name}
-            <br /> {mid.value} customers
-          </h3>
-        </div>
+      <div className="inner-2">
+        <Chart
+          options={options2}
+          series={series2}
+          type="radialBar"
+          width="318"
+          // width="522"
+        />
+      </div>
+      <div className="inner-3">
+        <Chart
+          options={options3}
+          series={series3}
+          type="radialBar"
+          width="285"
+          // width="410"
+        />
       </div>
     </div>
   );
