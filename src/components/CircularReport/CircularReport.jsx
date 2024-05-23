@@ -19,14 +19,14 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
           </h3>
         </div>
         <div className="order-stat">
-          <div className="stat-indicator-blue"></div>
+          <div className="stat-indicator-yellow"></div>
           <h3>
             To Go
             <br /> {toGo} customers
           </h3>
         </div>
         <div className="order-stat">
-          <div className="stat-indicator-yellow"></div>
+          <div className="stat-indicator-blue"></div>
           <h3>
             Delivery
             <br /> {delivery} customers
