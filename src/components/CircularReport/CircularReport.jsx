@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import ApexCharts from "apexcharts";
-import "./circular.scss";
+import "./CircularReport.scss";
 import Chart from "react-apexcharts";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
@@ -43,6 +43,8 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
 
     stroke: {
       lineCap: "butt",
+      width: 1,
+
       // HOW DO I SET IT TO ROUND AT THE END AND BUTT AT THE START ????
     },
   };
@@ -75,6 +77,7 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
     },
     stroke: {
       lineCap: "butt",
+      width: 1,
     },
   };
 
@@ -106,6 +109,7 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
     },
     stroke: {
       lineCap: "butt",
+      width: 1,
     },
   };
 
