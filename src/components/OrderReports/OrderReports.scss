@@ -14,10 +14,11 @@
   display: flex;
   justify-content: space-between;
   padding: 16px 24px;
-}
-.order-report-header * {
-  display: flex;
-  align-content: flex-start;
+
+  * {
+    display: flex;
+    align-content: flex-start;
+  }
 }
 
 .order-reports {
@@ -26,14 +27,14 @@
   margin-bottom: 20px;
 }
 
-.flex-start {
+.order-flex-start {
   flex: 1;
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.flex-end {
+.order-flex-end {
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -50,17 +51,14 @@
   padding: 8px 16px;
   border-radius: 16px;
 }
-
 .order-status-completed {
   color: #50d1aa;
   background-color: #314c4e;
 }
-
 .order-status-pending {
   color: #ffb572;
   background-color: #4c3b39;
 }
-
 .order-status-preparing {
   color: #9290fe;
   background-color: #363455;
@@ -70,10 +68,6 @@
   width: 40px;
   height: 40px;
   margin-right: 16px;
-}
-
-.positioning {
-  position: relative;
 }
 
 .order-dropdown {
@@ -87,10 +81,20 @@
   right: 0px;
   bottom: -155px;
   border-radius: 8px;
+
+  & div:hover {
+    cursor: pointer;
+  }
+
+  & div {
+    padding: 8px;
+  }
 }
-.order-dropdown div:hover {
-  cursor: pointer;
+
+.order-report-filter-btn {
+  color: white;
+  background-color: rgb(40, 40, 62);
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
 }
-.order-dropdown div {
-  padding: 8px;
-}/*# sourceMappingURL=OrderReport.css.map */

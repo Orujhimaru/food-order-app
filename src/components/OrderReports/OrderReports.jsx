@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import "./OrderReport.scss";
-import DropdownFilter from "./DropdownFilter";
+import "./OrderReports.scss";
+import DropdownFilter from "./DropdownFilter/DropdownFilter";
 import ReportElement from "./ReportElement";
-import { arrOfOrders } from "./data";
+import { arrOfOrders } from "../../db/data";
 
 // mock data
 function returnElements(array) {
@@ -48,28 +48,29 @@ function OrderReports() {
 
   return (
     <div className="order-report-container">
-      <div className="order-report-header">
+      <div style={{ marginTop: "16px" }} className="order-report-header">
         <h3>Order Report</h3>
-        <div className="positioning">
+        <div style={{ position: "relative" }}>
           <DropdownFilter setCat={setCat} />
         </div>
       </div>
 
       <div className="order-reports">
         <div className="order-report">
-          <div className="flex-start">
+          <div className="order-flex-start">
             <h3>Customer</h3>
           </div>
-          <div className="flex-start">
+          <div className="order-flex-start">
             <h3>Menu</h3>
           </div>
-          <div className="flex-start">
+          <div className="order-flex-start">
             <h3>Total Payment</h3>
           </div>
-          <div className="flex-end">
+          <div className="order-flex-end">
             <h3 style={{ marginRight: "20px" }}>Status</h3>
           </div>
         </div>
+        <br></br>
         {elements}
       </div>
     </div>

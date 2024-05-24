@@ -1,6 +1,6 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "./HomePage.scss";
-import OrderReports from "@/components/Reports/OrderReports";
+import OrderReports from "@/components/OrderReports/OrderReports";
 
 function HomePage() {
   return (
