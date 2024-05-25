@@ -1,19 +1,26 @@
+@import "@/styles/abstracts/_placeholders.scss";
+@import "@/styles/abstracts/_variables";
+
 .order-report-container {
-  max-width: 750px;
+  width: 100%;
   height: 500px;
-  background-color: #1f1d2b;
+  background-color: $secondary-bg;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
   overflow-x: visible;
   overflow-y: scroll;
+
+  @extend %custom-scroll-bar;
+  scrollbar-color: #f1f1f1 #17132c;
 }
 
 .order-report-header {
   display: flex;
   justify-content: space-between;
   padding: 16px 24px;
+  padding-bottom: 0px;
 
   * {
     display: flex;
@@ -25,6 +32,15 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+}
+
+.order-report-sticky {
+  padding-top: 40px !important;
+  background-color: #1f1d2b;
+  position: sticky;
+  top: -1px;
+  font-size: 20px !important;
+  font-weight: 600 !important;
 }
 
 .order-flex-start {
@@ -45,11 +61,15 @@
   width: 100%;
   display: flex;
   padding: 6px 24px;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .order-status {
   padding: 8px 16px;
   border-radius: 16px;
+  font-weight: 600;
+  font-size: 16px;
 }
 .order-status-completed {
   color: #50d1aa;

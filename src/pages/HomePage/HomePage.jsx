@@ -8,9 +8,6 @@ function HomePage() {
       <Sidebar />
       <div className="mainRoot">
         <div className="mainContent">
-          {/* TEMPORARY DIV FOR SPACING 
-          Dashboard Analytics Header*/}
-          <div style={{ height: "200px" }}></div>
           <OrderReports />
         </div>
       </div>

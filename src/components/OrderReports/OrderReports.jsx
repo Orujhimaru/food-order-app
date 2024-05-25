@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import "./OrderReports.scss";
@@ -7,18 +6,9 @@ import ReportElement from "./ReportElement";
 import { arrOfOrders } from "../../db/data";
 
 // mock data
-function returnElements(array) {
+function returnOrderReportElements(array) {
   let arr = array.map((order) => {
-    return (
-      <ReportElement
-        key={order.id}
-        img={order.img}
-        userName={order.userName}
-        orderName={order.orderName}
-        price={order.price}
-        status={order.status}
-      />
-    );
+    return <ReportElement key={order.id} order={order} />;
   });
   return arr;
 }
@@ -26,9 +16,11 @@ function returnElements(array) {
 function OrderReports() {
   console.log("render ALL");
   // Orders array state
-  const [elements, setElements] = React.useState(returnElements(arrOfOrders));
+  const [elements, setElements] = useState(
+    returnOrderReportElements(arrOfOrders)
+  );
   // CHANGE category STATE { all, preparing, pending, completed}
-  const [category, setCategory] = React.useState("all");
+  const [category, setCategory] = useState("all");
 
   function setCat(newValue) {
     setCategory(newValue);
@@ -39,10 +31,10 @@ function OrderReports() {
     console.log("run effect");
     // q3: IKi kere run printlemesinin sebebi StrictMode mu ?
     if (category === "all") {
-      setElements(returnElements(arrOfOrders));
+      setElements(returnOrderReportElements(arrOfOrders));
     } else {
       let arr = arrOfOrders.filter((a) => a.status === category);
-      setElements(returnElements(arr));
+      setElements(returnOrderReportElements(arr));
     }
   }, [category]);
 
@@ -56,7 +48,7 @@ function OrderReports() {
       </div>
 
       <div className="order-reports">
-        <div className="order-report">
+        <div className="order-report order-report-sticky">
           <div className="order-flex-start">
             <h3>Customer</h3>
           </div>
