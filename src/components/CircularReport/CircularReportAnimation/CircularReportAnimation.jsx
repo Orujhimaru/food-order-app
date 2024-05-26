@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import ApexCharts from "apexcharts";
 import "./CircularReportAnimation.scss";
 import Chart from "react-apexcharts";
 

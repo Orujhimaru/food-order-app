@@ -1,9 +1,10 @@
-@import "./styles/abstracts/index";
+@import "./styles/abstracts/_index";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: $primary-font;
 }
 
 a {
