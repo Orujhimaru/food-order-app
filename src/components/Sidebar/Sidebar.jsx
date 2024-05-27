@@ -18,9 +18,10 @@ function Sidebar() {
             <img
               src={leftArrow}
               style={{
+                transition: "all 0.3s",
                 transform: !isSidebarToggled
-                  ? "rotateY(180deg)"
-                  : "rotateY(0deg)",
+                  ? "rotateZ(180deg)"
+                  : "rotateZ(0deg)",
               }}
             />
           </li>

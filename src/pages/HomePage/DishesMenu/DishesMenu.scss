@@ -1,0 +1,37 @@
+
+@import '../../../styles/abstracts/variables';
+
+.dishes-menu-container{
+    padding: 20px;
+    display: grid;
+    row-gap: 40px;
+    column-gap: 20px;
+    grid-template-columns: repeat(auto-fit, 192px);
+}
+
+@media(max-width: 800px) {
+    .dishes-menu-container {
+        grid-template-columns: repeat(auto-fit, 100%);
+    }
+}
+
+
+
+.dishes-menu-item-desc-container{  
+    padding: 30px;
+    width: 100%;
+    background-color: $secondary-bg;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: end;
+    align-items: center;
+    border-radius: 16px;
+    height: 226px;
+    text-align: center;
+    font-size: $primary-font-size;
+    img{
+        position: relative;
+        bottom: 10px;
+    }
+}

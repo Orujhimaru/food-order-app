@@ -1,12 +1,13 @@
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "./HomePage.scss";
+import DishesMenu from "./DishesMenu/DishesMenu";
 
 function HomePage() {
   return (
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <h1 style={{ height: "1600px" }}>Homepage example</h1>
+        <DishesMenu filterCondition=""/>
       </div>
     </div>
   );
