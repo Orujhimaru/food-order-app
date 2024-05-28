@@ -8,12 +8,12 @@
   display: flex;
   flex-direction: column;
   border-radius: 12px;
-  overflow: hidden;
-  overflow-x: visible;
-  overflow-y: scroll;
+  overflow: auto;
+  // overflow-x: visible;
+  // overflow-y: scroll;
 
   @extend %custom-scroll-bar;
-  scrollbar-color: #f1f1f1 #17132c;
+  scrollbar-color: #d1d1d1 #1f1d2b;
 }
 
 .order-report-header {
@@ -21,6 +21,7 @@
   justify-content: space-between;
   padding: 16px 24px;
   padding-bottom: 0px;
+  align-items: center;
 
   * {
     display: flex;
@@ -113,8 +114,8 @@
 
 .order-report-filter-btn {
   color: white;
-  background-color: rgb(40, 40, 62);
+  background-color: #1f1d2b;
   padding: 10px 16px;
-  border: none;
-  border-radius: 12px;
+  border: rgb(157, 157, 157) 2px solid;
+  border-radius: 6px;
 }
