@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import "./OrderReports.scss";
-import DropdownFilter from "./DropdownFilter/DropdownFilter";
+import DropdownFilter from "../DropdownFilter/DropdownFilter";
 import ReportElement from "./ReportElement";
 import { arrOfOrders } from "../../db/data";
 

@@ -2,9 +2,6 @@ import "../OrderReports.scss";
 import React from "react";
 
 export default function DropdownFilter({ setCat, icon, list }) {
-  // PROPS OLARAK METHODU PASSLAMAM DOGRU MU ?
-  // CONTEXT API KULLANMAM GEREKIR MI ?
-  // CONTEXT API DAHA BUYUK NESTED COMPONENETLAR ICIN MI KULLANILIR ?
   console.log("render Dropdown");
   const [dropDown, setDropDown] = React.useState(false);
   function setDropdownVisible() {
