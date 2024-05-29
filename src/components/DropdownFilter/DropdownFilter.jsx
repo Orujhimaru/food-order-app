@@ -17,8 +17,6 @@ export default function DropdownFilter({ setCat, icon, list }) {
     );
   });
 
-  console.log(dropDownElements);
-
   return (
     <>
       <button className="order-report-filter-btn" onClick={setDropdownVisible}>
