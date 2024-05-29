@@ -7,23 +7,15 @@ import { foods } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
 
 function HomePage() {
-  const { fireStoreUser } = useAuth(); 
+  const { fireStoreUser } = useAuth();
 
   const [category, setCategory] = useState("all");
-  
+
   return (
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <CategoryTabs
-        setCategory={setCategory}
-        category={category}
-         
-        />
-        <DishesMenu
-        category={category}
-         
-        />
+        <CategoryTabs setCategory={setCategory} category={category} />
       </div>
     </div>
   );

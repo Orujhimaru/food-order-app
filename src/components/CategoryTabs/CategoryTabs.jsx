@@ -3,9 +3,7 @@ import { useState } from "react";
 import "./CategoryTabs.scss";
 
 function CategoryTabs({ setCategory, category }) {
-  console.log("category");
-
-    return (
+  return (
     <ul className="category-tabs">
       {categories.map((cat) => (
         <li
