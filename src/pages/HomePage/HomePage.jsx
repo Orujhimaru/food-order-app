@@ -7,7 +7,7 @@ function HomePage() {
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <DishesMenu filterCondition=""/>
+        <DishesMenu filterCondition="" />
       </div>
     </div>
   );
