@@ -1,4 +1,4 @@
-import "../OrderReports.scss";
+import "../OrderReports/OrderReports.scss";
 import React from "react";
 
 export default function DropdownFilter({ setCat, icon, list }) {
