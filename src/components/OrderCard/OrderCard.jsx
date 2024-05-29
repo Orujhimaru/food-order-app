@@ -6,7 +6,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/public/bookmark.svg"></img>
+            <img src="/public/coin.svg"></img>
           </div>
           <h5>
             <span style={{ color: "#50D1AA" }}>+32.40%</span>
@@ -20,7 +20,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/public/coin.svg"></img>
+            <img src="/public/bookmark.svg"></img>
           </div>
           <h5>
             <span style={{ color: "#FF7CA3" }}>-15.60%</span>
