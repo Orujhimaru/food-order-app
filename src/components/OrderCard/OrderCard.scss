@@ -1,8 +1,8 @@
 .order-card-container {
   display: flex;
   width: 100%;
+  flex-wrap: wrap;
   gap: 24px;
-  justify-content: space-between;
 }
 
 .order-card {
@@ -12,6 +12,7 @@
   background-color: #1f1d2b;
   border-radius: 8px;
   flex-basis: 200px;
+  flex-grow: 1;
   padding: 16px 16px;
   padding-right: 32px;
 
