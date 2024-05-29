@@ -43,7 +43,7 @@ function OrderReports() {
       <div style={{ marginTop: "16px" }} className="order-report-header">
         <h3>Order Report</h3>
         <div style={{ position: "relative" }}>
-          <DropdownFilter setCat={setCat} />
+          <DropdownFilter setCat={setCat} icon={"/public/filter.svg"} />
         </div>
       </div>
 

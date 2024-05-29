@@ -113,6 +113,11 @@
 }
 
 .order-report-filter-btn {
+  & img {
+    margin-right: 10px;
+  }
+
+  align-items: center;
   color: white;
   background-color: #1f1d2b;
   padding: 10px 16px;

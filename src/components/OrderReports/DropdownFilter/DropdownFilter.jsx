@@ -1,7 +1,7 @@
 import "../OrderReports.scss";
 import React from "react";
 
-export default function DropdownFilter({ setCat }) {
+export default function DropdownFilter({ setCat, icon }) {
   // PROPS OLARAK METHODU PASSLAMAM DOGRU MU ?
   // CONTEXT API KULLANMAM GEREKIR MI ?
   // CONTEXT API DAHA BUYUK NESTED COMPONENETLAR ICIN MI KULLANILIR ?
@@ -13,6 +13,7 @@ export default function DropdownFilter({ setCat }) {
   return (
     <>
       <button className="order-report-filter-btn" onClick={setDropdownVisible}>
+        <img src={icon} />
         Filter Order
       </button>
       {dropDown && (
