@@ -112,6 +112,10 @@
   }
 }
 
+.on-top {
+  z-index: 4;
+}
+
 .order-report-filter-btn {
   & img {
     margin-right: 10px;

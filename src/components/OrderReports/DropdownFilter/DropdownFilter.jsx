@@ -11,9 +11,13 @@ export default function DropdownFilter({ setCat, icon, list }) {
     setDropDown((visible) => !visible);
   }
 
-  let dropDownElements = list.map((i) => {
+  let dropDownElements = list.map((i, index) => {
     let cat = i.toLowerCase();
-    return <div onClick={() => setCat({ cat })}>{i}</div>;
+    return (
+      <div key={index} onClick={() => setCat(cat)}>
+        {i}
+      </div>
+    );
   });
 
   console.log(dropDownElements);

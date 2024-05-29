@@ -52,7 +52,7 @@ function OrderReports() {
       </div>
 
       <div className="order-reports">
-        <div className="order-report order-report-sticky">
+        <div className="order-report order-report-sticky on-top">
           <div className="order-flex-start">
             <h3>Customer</h3>
           </div>
