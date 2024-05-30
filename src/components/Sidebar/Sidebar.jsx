@@ -28,6 +28,7 @@ function Sidebar() {
           <li>Link 2</li>
           <li>Link 3</li>
           <li>Link 4</li>
+          <li>Link 5</li>
         </ul>
       </nav>
       {/* these examples should be deleted */}
