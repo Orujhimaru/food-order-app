@@ -1,6 +1,7 @@
 @import "src/index.scss";
 
 .circular-report-column {
+  color: white;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -20,7 +21,7 @@
 }
 
 .circular-report-container {
-  background-color: #1f1d2b;
+  background-color: $secondary-bg;
   width: 100%;
   display: flex;
   flex-direction: row;

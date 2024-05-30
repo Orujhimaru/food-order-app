@@ -1,5 +1,4 @@
 import "./CircularReport.scss";
-import { useEffect, useState, useRef } from "react";
 import CircularReportAnimation from "./CircularReportAnimation/CircularReportAnimation";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
