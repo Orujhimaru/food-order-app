@@ -14,11 +14,13 @@ function HomePage() {
   return (
     <div>
       <Sidebar />
+
       <div className="mainRoot">
 
         <CategoryTabs setCategory={setCategory} category={category} />
 
       </div>
+
     </div>
   );
 }
