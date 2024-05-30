@@ -1,12 +1,12 @@
 @import "src/index.scss";
 
 .circular-report-column {
-  color: white;
+  color: $primary-font-color;
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #1f1d2b;
-  border-radius: 8px;
+  background-color: $secondary-bg;
+  border-radius: $border-radius;
   padding: 10px 0px;
 }
 
@@ -29,7 +29,7 @@
   align-items: center;
   padding: 10px 32px;
   gap: 10px;
-  border-radius: 8px;
+  border-radius: $border-radius;
 }
 
 .order-stats {

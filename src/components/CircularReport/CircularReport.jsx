@@ -1,4 +1,5 @@
 import "./CircularReport.scss";
+
 import CircularReportAnimation from "./CircularReportAnimation/CircularReportAnimation";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
