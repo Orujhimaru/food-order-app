@@ -7,8 +7,14 @@ import { arrOfOrders } from "../../db/data";
 
 // mock data
 function returnOrderReportElements(array) {
-  let arr = array.map((order) => {
-    return <ReportElement key={order.id} order={order} />;
+  let arr = array.map((order, index) => {
+    return (
+      <ReportElement
+        key={order.id}
+        order={order}
+        colored={index % 2 === 0 ? true : false}
+      />
+    );
   });
   return arr;
 }
@@ -52,7 +58,7 @@ function OrderReports() {
       </div>
 
       <div className="order-reports">
-        <div className="order-report order-report-sticky on-top">
+        <div className="order-report order-report-sticky">
           <div className="order-flex-start">
             <h3>Customer</h3>
           </div>

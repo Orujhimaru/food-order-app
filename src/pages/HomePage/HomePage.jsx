@@ -7,9 +7,8 @@ function HomePage() {
     <div>
       <Sidebar />
       <div className="mainRoot">
-        <div className="mainContent">
-          <OrderReports />
-        </div>
+        <div className="mainContent"></div>
+        <h1 style={{ height: "100px" }}>Homepage example</h1>
       </div>
     </div>
   );
