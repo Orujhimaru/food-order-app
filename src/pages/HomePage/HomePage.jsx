@@ -15,7 +15,9 @@ function HomePage() {
     <div>
       <Sidebar />
       <div className="mainRoot">
+
         <CategoryTabs setCategory={setCategory} category={category} />
+
       </div>
     </div>
   );
