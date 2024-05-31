@@ -1,27 +1,28 @@
-import { dishesMenu } from "./DishesMenuData"
-import './DishesMenu.scss'
+import "./DishesMenu.scss";
 
-function DishesMenu({ filterCondition }) {
+function DishesMenu({ category, foods }) {
+  const filteredFoods =
+    category == "all"
+      ? foods
+      : foods.filter((food) => {
+          return food.category.key == category;
+        });
 
-  const filteredItems = filterCondition == "" ? dishesMenu : dishesMenu.filter((item) => {
-    return item.category == filterCondition;
-  })
   return (
     <div className="dishes-menu-container">
-      {filteredItems.map((item, index) => {
-        return <div className="dishes-menu-item" key={index}>
-
-          <div className="dishes-menu-item-desc-container">
-            <img src={item.image} alt="" />
-            <span className="dishes-menu-item-name">{item.name}</span>
-            <span className="dishes-menu-item-price">$ {item.prices}</span>
+      {filteredFoods.map((food, index) => {
+        return (
+          <div className="dishes-menu-item" key={index}>
+            <div className="dishes-menu-item-desc-container">
+              <img src={food.image} alt="" />
+              <span className="dishes-menu-item-name">{food.description}</span>
+              <span className="dishes-menu-item-price">$ {food.price}</span>
+            </div>
           </div>
-
-        </div>
+        );
       })}
-
     </div>
-  )
+  );
 }
 
-export default DishesMenu
+export default DishesMenu;

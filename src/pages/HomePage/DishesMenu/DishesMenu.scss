@@ -1,7 +1,7 @@
 @import "../../../styles/abstracts/variables";
 
 .dishes-menu-container {
-  padding: 20px;
+  padding: 40px 20px 20px 20px;
   display: grid;
   row-gap: 40px;
   column-gap: 20px;
@@ -11,6 +11,7 @@
 @media (max-width: 600px) {
   .dishes-menu-container {
     grid-template-columns: repeat(auto-fit, 100%);
+    padding: 40px 0px 20px 0px;
   }
 }
 
