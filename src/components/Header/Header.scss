@@ -1,0 +1,58 @@
+@import "../../styles/abstracts/variables";
+
+$header-font: "Barrow", sans-serif;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-bg;
+  color: white;
+  max-width: 1300px;
+}
+
+.headerDate {
+  h1 {
+    font-size: 18px;
+    line-height: 39.2px;
+    color: $primary-font-color;
+    font-family: $header-font;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22.4px;
+    color: rgba(224, 230, 233, 1);
+
+    font-family: $header-font;
+  }
+}
+
+.headerSearch {
+  display: flex;
+  align-items: center;
+  width: 235px;
+  gap: 8px;
+  height: 48px;
+  background-color: rgba(45, 48, 62, 1);
+  border: 1px solid rgba(57, 60, 73, 1);
+  border-radius: 8px;
+  input {
+    background-color: transparent;
+    border: none;
+    width: 235px;
+    height: 48px;
+    outline: none;
+
+    &::placeholder {
+      color: #888888;
+    }
+  }
+}
+input:focus {
+  color: $primary-font-color;
+}
+
+.headerIcon {
+  margin-left: 10px;
+}
