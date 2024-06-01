@@ -11,11 +11,15 @@ function DashboardPage() {
       <Sidebar />
       <div className="mainRoot">
         {/* <h1 style={{ height: "100px" }}>Homepage example</h1> */}
-        <div className="container-70">
-          <OrderCard />
+        <div className="container-100">
+          <div className="container-60">
+            <OrderCard />
 
-          <OrderReports />
-          <CircularReport delivery={1231} dineIn={500} toGo={123} />
+            <OrderReports />
+          </div>
+          <div className="container-40">
+            <CircularReport delivery={1231} dineIn={500} toGo={123} />
+          </div>
         </div>
       </div>
     </div>
