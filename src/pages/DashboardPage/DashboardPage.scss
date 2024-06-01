@@ -4,3 +4,10 @@
   @extend %main-container;
   position: relative;
 }
+
+.container-70 {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  gap: 24px;
+}

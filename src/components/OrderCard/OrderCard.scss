@@ -1,0 +1,40 @@
+@import "@/styles/abstracts/_variables";
+
+.order-card-container {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.order-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: $secondary-bg;
+  border-radius: $border-radius;
+  flex-basis: 200px;
+  flex-grow: 1;
+  padding: 16px 16px;
+  padding-right: 32px;
+
+  h3 {
+    font-size: 32px;
+  }
+}
+
+.order-flex {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.icon-container {
+  background-color: #252836;
+  border-radius: $border-radius;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
