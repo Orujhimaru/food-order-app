@@ -53,6 +53,7 @@ function OrderReports() {
             setCat={setCat}
             icon={"/public/filter.svg"}
             list={["All", "Completed", "Pending", "Preparing"]}
+            filterTopic={"Orders"}
           />
         </div>
       </div>

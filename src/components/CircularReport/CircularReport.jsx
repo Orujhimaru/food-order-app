@@ -1,20 +1,23 @@
 import "./CircularReport.scss";
 import DropdownFilter from "../DropdownFilter/DropdownFilter";
+import { useState } from "react";
 
 import CircularReportAnimation from "./CircularReportAnimation/CircularReportAnimation";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
+  const [category, setCat] = useState("a");
+
   return (
     <div className="circular-report-column">
       <div className="circular-report-header ">
         Most Type of Order
         <div className="cr-header-right">
-          <div className="report-filter-btn">Today</div>
           <div style={{ position: "relative" }}>
             <DropdownFilter
-              setCat={{}}
+              setCat={setCat}
               icon={"/public/mask.svg"}
               list={["Today", "Month", "Year"]}
+              filterTopic={"Timeframe"}
             />
           </div>
         </div>

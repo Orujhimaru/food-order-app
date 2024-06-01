@@ -1,7 +1,7 @@
 import "../OrderReports/OrderReports.scss";
 import React from "react";
 
-export default function DropdownFilter({ setCat, icon, list }) {
+export default function DropdownFilter({ setCat, icon, list, filterTopic }) {
   const [dropDown, setDropDown] = React.useState(false);
   function setDropdownVisible() {
     setDropDown((visible) => !visible);
@@ -20,7 +20,7 @@ export default function DropdownFilter({ setCat, icon, list }) {
     <>
       <button className="order-report-filter-btn" onClick={setDropdownVisible}>
         <img src={icon} />
-        Filter Order
+        Filter {filterTopic}
       </button>
       {dropDown && <div className="order-dropdown">{dropDownElements}</div>}
     </>
