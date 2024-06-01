@@ -112,7 +112,7 @@
   z-index: 5;
   padding: 4px 8px;
   right: 0px;
-  bottom: -155px;
+  top: 50px;
   border-radius: $border-radius;
 
   & div:hover {
@@ -126,6 +126,8 @@
 
 .order-report-filter-btn {
   & img {
+    max-width: 20px;
+    max-height: 20px;
     margin-right: 10px;
   }
 
