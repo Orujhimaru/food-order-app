@@ -1,11 +1,14 @@
 import "./Header.scss";
+import moment from "moment";
 
 function Header() {
+  const currentDate = moment().format("dddd,  MMM YYYY");
+
   return (
     <div className="header">
       <div className="headerDate">
         <h1>Jaegar Resto</h1>
-        <p>Tuesday,2 Feb 2021</p>
+        <p>{currentDate}</p>
       </div>
       <div className="headerSearch">
         <img

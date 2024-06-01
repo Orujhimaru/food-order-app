@@ -1,6 +1,6 @@
 @import "../../styles/abstracts/variables";
 
-$header-font: "Barrow", sans-serif;
+$header-font: "Barlow", sans-serif;
 
 .header {
   display: flex;
@@ -8,7 +8,6 @@ $header-font: "Barrow", sans-serif;
   align-items: center;
   background-color: $primary-bg;
   color: white;
-  max-width: 1300px;
 }
 
 .headerDate {
