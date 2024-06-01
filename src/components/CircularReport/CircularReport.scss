@@ -1,0 +1,67 @@
+@import "src/index.scss";
+
+.circular-report-column {
+  color: $primary-font-color;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: $secondary-bg;
+  border-radius: $border-radius;
+  padding: 10px 0px;
+}
+
+.circular-report-header {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  border-bottom: #393c49 2px solid;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.circular-report-container {
+  background-color: $secondary-bg;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 32px;
+  gap: 10px;
+  border-radius: $border-radius;
+}
+
+.order-stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.order-stat {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.stat-indicator {
+  &-pink {
+    background-color: #ff7ca3;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  &-blue {
+    background-color: #65b0f6;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+  &-yellow {
+    background-color: #ffb572;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+  }
+}
