@@ -2,7 +2,7 @@
 
 %custom-scroll-bar {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: thin;
   scrollbar-color: #d7d4d6 #fff;
@@ -16,6 +16,10 @@
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background-color: #d7d4d6;
+  }
+
+  &:hover &:active &:focus {
+    overflow-y: auto;
   }
 }
 

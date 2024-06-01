@@ -1,0 +1,140 @@
+@import "@/styles/abstracts/_placeholders.scss";
+@import "@/styles/abstracts/_variables";
+
+.order-report-container {
+  width: 100%;
+  height: 500px;
+  background-color: $secondary-bg;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius;
+  overflow: auto;
+  // overflow-x: visible;
+  // overflow-y: scroll;
+
+  @extend %custom-scroll-bar;
+  scrollbar-color: #d1d1d1 $secondary-bg;
+}
+
+.order-report-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  padding-bottom: 0px;
+  align-items: center;
+
+  * {
+    display: flex;
+    align-content: flex-start;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 24px;
+  }
+}
+
+.order-reports {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 12px;
+}
+
+.order-report-sticky {
+  padding-top: 40px !important;
+  background-color: $secondary-bg;
+  position: sticky;
+  top: -1px;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+  padding-bottom: 20px !important;
+  border-bottom: #8e8e8e 2px solid;
+}
+
+.order-flex-start {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.order-flex-end {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.order-report {
+  width: 100%;
+  display: flex;
+  padding: 6px 24px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.order-odd-background {
+  background-color: #262531;
+  padding: 12px 24px;
+}
+.order-status {
+  padding: 8px 16px;
+  border-radius: $border-radius;
+  font-weight: 600;
+  font-size: 16px;
+}
+.order-status-completed {
+  color: #50d1aa;
+  background-color: #314c4e;
+}
+.order-status-pending {
+  color: #ffb572;
+  background-color: #4c3b39;
+}
+.order-status-preparing {
+  color: #9290fe;
+  background-color: #363455;
+}
+
+.image-pp {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.order-dropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: #403d4c;
+  color: white;
+  position: absolute;
+  z-index: 5;
+  padding: 4px 8px;
+  right: 0px;
+  top: 50px;
+  border-radius: $border-radius;
+
+  & div:hover {
+    cursor: pointer;
+  }
+
+  & div {
+    padding: 8px;
+  }
+}
+
+.order-report-filter-btn {
+  & img {
+    max-width: 20px;
+    max-height: 20px;
+    margin-right: 10px;
+  }
+
+  align-items: center;
+  color: white;
+  background-color: $secondary-bg;
+  padding: 10px 16px;
+  border: rgb(157, 157, 157) 2px solid;
+  border-radius: $border-radius;
+}
