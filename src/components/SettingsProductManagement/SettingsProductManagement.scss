@@ -1,0 +1,12 @@
+@import "@/styles/abstracts/_variables";
+
+.settings-cat-main-container {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-bg;
+}
+.settings-cat-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 34px 24px;
+}

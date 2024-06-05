@@ -8,7 +8,7 @@ import DishesMenu from "@/components/DishesMenu/DishesMenu";
 import { useState, useEffect } from "react";
 import { foods } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
-
+import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 
 function HomePage() {
   const { fireStoreUser } = useAuth();
@@ -20,16 +20,13 @@ function HomePage() {
       <Sidebar />
 
       <div className="mainRoot">
-
         <Header />
 
         <h1 style={{ height: "1600px" }}>Homepage example</h1>
 
-
         <CategoryTabs setCategory={setCategory} category={category} />
-
+        <SettingsProductManagement />
       </div>
-
     </div>
   );
 }

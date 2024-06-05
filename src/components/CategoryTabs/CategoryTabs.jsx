@@ -4,7 +4,7 @@ import "./CategoryTabs.scss";
 
 function CategoryTabs({ setCategory, category }) {
   return (
-    <ul className="category-tabs">
+    <ul className="category-tabs" key={}>
       {categories.map((cat) => (
         <li
           onClick={() => {
