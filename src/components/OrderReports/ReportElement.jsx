@@ -21,3 +21,7 @@ export default function ReportElement({ order, colored }) {
     </div>
   );
 }
+
+ReportElement.defaultProps = {
+  colored: false,
+};
