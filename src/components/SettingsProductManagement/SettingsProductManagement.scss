@@ -4,9 +4,24 @@
   display: flex;
   flex-direction: column;
   background-color: $secondary-bg;
+  padding: 24px;
 }
+
 .settings-cat-header {
   display: flex;
   justify-content: space-between;
-  margin: 34px 24px;
+  margin: 34px 0;
+}
+
+.dish-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.new-dish {
+}
+
+.dish {
+  flex-basis: 1fr;
 }
