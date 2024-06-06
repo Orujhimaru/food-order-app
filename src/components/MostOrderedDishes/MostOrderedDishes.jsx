@@ -1,11 +1,20 @@
 import DropdownFilter from "../DropdownFilter/DropdownFilter";
-import { useState } from "react";
 import { foods } from "@/db/food";
 import "./MostOrderedDishes.scss";
 
 export default function MostOrderedDishes() {
   const arr = foods.slice(0, 3);
-  console.log(arr);
+  let elements = arr.map((food) => {
+    return (
+      <div className="food-h">
+        <img src={food.image}></img>
+        <div className="food-v">
+          <h3>{food.description}</h3>
+          <h4>200 dishes ordered</h4>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div className="most-ordered-container">
@@ -18,28 +27,7 @@ export default function MostOrderedDishes() {
           filterTopic={"Today"}
         />
       </div>
-      <div className="food-h">
-        <img src="/src/assets/Image-2.png"></img>
-        <div className="food-v">
-          <h3>Spicy seasoned seafood noodles</h3>
-          <h4>200 dishes ordered</h4>
-        </div>
-      </div>
-      <div className="food-h">
-        <img src="/src/assets/Image-3.png"></img>
-        <div className="food-v">
-          <h3>Salted pasta with mushroom sauce</h3>
-          <h4>120 dishes ordered</h4>
-        </div>
-      </div>
-      <div className="food-h">
-        <img src="/src/assets/Image-5.png"></img>
-        <div className="food-v">
-          <h3>Beef dumpling in hot and sour soup</h3>
-          <h4>80 dishes ordered</h4>
-        </div>
-      </div>
-
+      {elements}
       <button className="show-all-button">View All</button>
     </div>
   );
