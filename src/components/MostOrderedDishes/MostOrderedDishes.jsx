@@ -4,6 +4,9 @@ import { foods } from "@/db/food";
 import "./MostOrderedDishes.scss";
 
 export default function MostOrderedDishes() {
+  const arr = foods.slice(0, 3);
+  console.log(arr);
+
   return (
     <div className="most-ordered-container">
       <div className="most-ordered-header">
