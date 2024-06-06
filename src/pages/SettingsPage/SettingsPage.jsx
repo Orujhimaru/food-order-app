@@ -1,11 +1,17 @@
+import { useParams } from "react-router-dom";
 import "./SettingsPage.scss";
+import ProductManagement from "../../components/SettingsCategory/ProductManagement";
 
 function SettingsPage() {
-  return (
-    <main className="settings-page">
-      <h1>Settings Page</h1>
-    </main>
-  );
+  const { section } = useParams();
+  const sectionComponents = {
+    "product-management": <ProductManagement />,
+    "your-restaurant": <YourRestaurant />,
+  };
+
+  sectionComponents[section];
+
+  return <main className="settings-page"> {sectionComponents[section]} </main>;
 }
 
 export default SettingsPage;
