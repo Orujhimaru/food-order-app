@@ -47,7 +47,13 @@ export default function SettingsProductManagement() {
         categories={categoryList}
         category={category}
       />
-      <div className="dishes-container">{renderDishes(foods, category)}</div>
+      <div className="dishes-container">
+        <div className="new-dish">
+          <h3>+</h3>
+          <h3>Add dish</h3>
+        </div>
+        {renderDishes(foods, category)}
+      </div>
     </div>
   );
 }
