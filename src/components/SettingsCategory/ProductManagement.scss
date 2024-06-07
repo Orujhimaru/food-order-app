@@ -1,0 +1,58 @@
+@import "../../styles/abstracts/variables";
+
+$settings-font: "Barlow";
+
+.settings-menu {
+  padding: 24px;
+  width: 275px;
+  background-color: rgba(31, 29, 43, 1);
+  color: rgba(171, 187, 194, 1);
+  height: 723px;
+  font-family: $settings-font;
+
+  .item-content {
+  }
+
+  .settings-menu-item {
+    display: flex;
+
+    flex-direction: column;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.5s;
+
+    a {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    &:hover {
+      background-color: #333333;
+    }
+
+    .settings-menu-active {
+      background: rgba(234, 124, 105, 0.26);
+      color: rgba(234, 124, 105, 1);
+    }
+
+    .settings-menu-icon {
+      margin-top: 5px;
+    }
+
+    .settings-menu-text {
+      margin-left: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: $settings-font;
+    }
+
+    .settings-menu-description {
+      font-size: 12px;
+      color: rgba(171, 187, 194, 1);
+      margin-left: 25px;
+      margin-bottom: 20px;
+    }
+  }
+}
