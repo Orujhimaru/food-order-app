@@ -16,12 +16,10 @@ export default function SettingsProductManagement() {
 
   function renderDishes(dishes, cateogry) {
     let arr = dishes.map((dish) => {
-      console.log(dish.category);
-      console.log(category);
       return (
         (dish.category.key === category || category === "all") && (
-          <div className="dish-container">
-            <div className="dish" key={dish.id}>
+          <div className="dish-container" key={dish.id}>
+            <div className="dish">
               <img src={dish.image}></img>
               <h4>{dish.description}</h4>
               <h4>{dish.price}</h4>
