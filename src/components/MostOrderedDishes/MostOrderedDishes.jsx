@@ -6,7 +6,7 @@ export default function MostOrderedDishes() {
   const arr = foods.slice(0, 3);
   let elements = arr.map((food) => {
     return (
-      <div className="food-h">
+      <div className="food-h" key={food.id}>
         <img src={food.image}></img>
         <div className="food-v">
           <h3>{food.description}</h3>
