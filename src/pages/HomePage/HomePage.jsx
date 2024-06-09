@@ -27,7 +27,6 @@ function HomePage() {
           setCategory={setCategory}
           category={category}
         />
-        <SettingsProductManagement />
       </div>
     </div>
   );
