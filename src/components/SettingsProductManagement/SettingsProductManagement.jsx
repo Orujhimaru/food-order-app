@@ -18,12 +18,10 @@ export default function SettingsProductManagement() {
     let arr = dishes.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
-          <div className="dish-container" key={dish.id}>
-            <div className="dish">
-              <img src={dish.image}></img>
-              <h4>{dish.description}</h4>
-              <h4>{dish.price}</h4>
-            </div>
+          <div className="dish" key={dish.id}>
+            <img src={dish.image}></img>
+            <h4>{dish.description}</h4>
+            <h4>{dish.price}</h4>
             <button className="edit-button">
               <img src={"/public/edit-icon.svg"}></img>
               Edit dish
