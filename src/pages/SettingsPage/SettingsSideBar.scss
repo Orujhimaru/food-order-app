@@ -3,11 +3,12 @@
 $settings-font: "Barlow";
 
 .settings-menu {
-  padding: 24px;
-  width: 275px;
+  border-radius: 8px;
+  width: 20vw;
   background-color: rgba(31, 29, 43, 1);
   color: rgba(171, 187, 194, 1);
-  height: 723px;
+  height: 100vh;
+
   font-family: $settings-font;
 
   .item-content {
@@ -15,14 +16,14 @@ $settings-font: "Barlow";
 
   .settings-menu-item {
     display: flex;
-
     flex-direction: column;
-    margin-bottom: 10px;
     cursor: pointer;
     border-radius: 8px;
     transition: 0.5s;
 
     a {
+      padding: 24px;
+
       display: flex;
       gap: 10px;
       flex-direction: column;
