@@ -16,6 +16,9 @@ export default function SettingsProductManagement() {
   // }
   function editModeToggle(id, desc) {
     // console.log(editMode);
+    if (editMode[1] !== id && editMode[0] === true) {
+      return;
+    }
     setEditMode((previousMode) => [!previousMode[0], id]);
     editFoodList(id, desc);
     setEditedField("");
@@ -41,7 +44,7 @@ export default function SettingsProductManagement() {
             {editMode[0] === true && editMode[1] === dish.id ? (
               <input
                 type="text"
-                onChange={(e) => setEditedField(e.target.value)}
+                onChange={(event) => setEditedField(event.target.value)}
                 // neden gozukmuyor value input fieldin icinde ?
                 value={editedField1}
                 // defaultValue={dish.description} neden calismiyor ???
