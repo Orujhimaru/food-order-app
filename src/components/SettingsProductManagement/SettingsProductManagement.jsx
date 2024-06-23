@@ -7,22 +7,53 @@ import { useState } from "react";
 export default function SettingsProductManagement() {
   // const [deleteState, setDeleteState] = React.useState(false);
   const [category, setCategory] = useState("all");
-  const [categoryList, setCategoryList] = useState(categories);
-  console.log(categories);
+  const [foodList, setFoodList] = useState(foods);
+  const [editMode, setEditMode] = useState([false, -1]);
+  const [editedField1, setEditedField] = useState("");
   // const [coldDishes, grill, appetizer, dessert, soup] = categories;
   // function deleteCategories() {
   //   setDeleteState((visible) => !visible);
   // }
+  function editModeToggle(id, desc) {
+    // console.log(editMode);
+    setEditMode((previousMode) => [!previousMode[0], id]);
+    editFoodList(id, desc);
+    setEditedField("");
+    // console.log(editMode);
+  }
+  // console.log(foodList);
 
-  function renderDishes(dishes, cateogry) {
+  function editFoodList(id, desc) {
+    setFoodList((prevFoodList) =>
+      prevFoodList.map((dish) => {
+        return dish.id === id ? { ...dish, description: desc } : dish;
+      })
+    );
+  }
+
+  function renderDishes(dishes) {
+    console.log("edit mode started");
     let arr = dishes.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
             <img src={dish.image}></img>
-            <h4>{dish.description}</h4>
+            {editMode[0] === true && editMode[1] === dish.id ? (
+              <input
+                type="text"
+                onChange={(e) => setEditedField(e.target.value)}
+                // neden gozukmuyor value input fieldin icinde ?
+                value={editedField1}
+                // defaultValue={dish.description} neden calismiyor ???
+              ></input>
+            ) : (
+              <h4>{dish.description}</h4>
+            )}
             <h4>{dish.price}</h4>
-            <button className="edit-button">
+            <button
+              className="edit-button"
+              onClick={() => editModeToggle(dish.id, editedField1)}
+            >
               <img src={"/public/edit-icon.svg"}></img>
               Edit dish
             </button>
@@ -40,15 +71,15 @@ export default function SettingsProductManagement() {
       </div>
       <CategoryTabs
         setCategory={setCategory}
-        categories={categoryList}
+        categories={categories}
         category={category}
       />
       <div className="dishes-container">
-        <div className="new-dish">
+        <button className="new-dish">
           <h3>+</h3>
           <h3>Add dish</h3>
-        </div>
-        {renderDishes(foods, category)}
+        </button>
+        {renderDishes(foodList)}
       </div>
     </div>
   );
