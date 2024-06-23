@@ -5,31 +5,33 @@ import CategoryTabs from "@/components/CategoryTabs/CategoryTabs";
 import { useState } from "react";
 
 export default function SettingsProductManagement() {
-  // const [deleteState, setDeleteState] = React.useState(false);
   const [category, setCategory] = useState("all");
-  const [foodList, setFoodList] = useState(foods);
-  const [editMode, setEditMode] = useState([false, -1]);
-  const [editedField1, setEditedField] = useState("");
-  // const [coldDishes, grill, appetizer, dessert, soup] = categories;
-  // function deleteCategories() {
-  //   setDeleteState((visible) => !visible);
-  // }
-  function editModeToggle(id, desc) {
-    // console.log(editMode);
+  const [foodList, setFoodList] = useState(foods); // yemekler
+  const [editMode, setEditMode] = useState([false, -1]); // BU FIELD INPUT VE YA H4 GOSTERILMESINI SAGLIYOR, ID ve TRUE/FALSE valuelari ile.
+  const [editedField1, setEditedField] = useState(""); // 1. input field in degeri.
+
+  const [editedField2, setEditedField2] = useState("");
+
+  function editModeToggle(id, desc, price) {
     if (editMode[1] !== id && editMode[0] === true) {
       return;
     }
     setEditMode((previousMode) => [!previousMode[0], id]);
-    editFoodList(id, desc);
+    editFoodList(id, desc, price);
     setEditedField("");
-    // console.log(editMode);
+    setEditedField2("");
   }
   // console.log(foodList);
 
-  function editFoodList(id, desc) {
+  function editFoodList(id, desc, price) {
+    if (desc === "" || price === "") {
+      return;
+    }
     setFoodList((prevFoodList) =>
       prevFoodList.map((dish) => {
-        return dish.id === id ? { ...dish, description: desc } : dish;
+        return dish.id === id
+          ? { ...dish, description: desc, price: price }
+          : dish;
       })
     );
   }
@@ -42,22 +44,31 @@ export default function SettingsProductManagement() {
           <div className="dish" key={dish.id}>
             <img src={dish.image}></img>
             {editMode[0] === true && editMode[1] === dish.id ? (
-              <input
-                type="text"
-                onChange={(event) => setEditedField(event.target.value)}
-                // neden gozukmuyor value input fieldin icinde ?
-                // focus state de gozukmuyor, blur state de gozukuyor.
-                value={editedField1}
-                // defaultValue={dish.description}
-                //neden calismiyor ???
-              ></input>
+              <>
+                <input
+                  type="text"
+                  onChange={(event) => setEditedField(event.target.value)}
+                  value={editedField1}
+                  placeholder={dish.description}
+                ></input>
+                <input
+                  type="text"
+                  onChange={(event) => setEditedField2(event.target.value)}
+                  value={editedField2}
+                  placeholder={dish.price}
+                ></input>
+              </>
             ) : (
-              <h4>{dish.description}</h4>
+              <>
+                <h4>{dish.description}</h4>
+                <h4>{dish.price}</h4>
+              </>
             )}
-            <h4>{dish.price}</h4>
             <button
               className="edit-button"
-              onClick={() => editModeToggle(dish.id, editedField1)}
+              onClick={() =>
+                editModeToggle(dish.id, editedField1, editedField2)
+              }
             >
               <img src={"/public/edit-icon.svg"}></img>
               Edit dish
