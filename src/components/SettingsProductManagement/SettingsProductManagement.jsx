@@ -46,8 +46,10 @@ export default function SettingsProductManagement() {
                 type="text"
                 onChange={(event) => setEditedField(event.target.value)}
                 // neden gozukmuyor value input fieldin icinde ?
+                // focus state de gozukmuyor, blur state de gozukuyor.
                 value={editedField1}
-                // defaultValue={dish.description} neden calismiyor ???
+                // defaultValue={dish.description}
+                //neden calismiyor ???
               ></input>
             ) : (
               <h4>{dish.description}</h4>
