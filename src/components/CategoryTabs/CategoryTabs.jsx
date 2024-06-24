@@ -2,7 +2,7 @@ import { categories } from "@/db/food";
 import { useState } from "react";
 import "./CategoryTabs.scss";
 
-function CategoryTabs({ setCategory, category }) {
+function CategoryTabs({ setCategory, category, categories }) {
   return (
     <ul className="category-tabs">
       {categories.map((cat) => (
@@ -11,6 +11,7 @@ function CategoryTabs({ setCategory, category }) {
             setCategory(cat.key);
           }}
           className={cat.key === category ? "active" : ""}
+          key={cat.id}
         >
           {cat.name}
         </li>
