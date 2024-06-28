@@ -47,7 +47,7 @@ input {
 .new-dish {
   display: flex;
   border: none;
-  width: 220px;
+  width: 280px;
   height: 342.5px;
   flex-direction: column;
   justify-content: center;
@@ -77,7 +77,7 @@ input {
 
 .dish {
   display: flex;
-  flex: 1 1 0;
+  flex: 1 1 220px;
   max-width: 280px;
   flex-direction: column;
   justify-content: flex-start;
