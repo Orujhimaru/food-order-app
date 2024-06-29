@@ -14,7 +14,7 @@ export default function SettingsProductManagement() {
   //   setDeleteState((visible) => !visible);
   // }
 
-  function renderDishes(dishes, cateogry) {
+  function renderDishes(dishes) {
     let arr = dishes.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
