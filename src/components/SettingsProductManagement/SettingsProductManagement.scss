@@ -111,4 +111,35 @@ input {
   border: none;
   color: #ea7c69;
   background-color: #50343a;
+  & img {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+}
+
+.button-elements-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-button-save {
+  width: calc(100% + 80px);
+  align-self: center;
+  padding: 12px 0;
+  margin-top: auto;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  // border: 2px #393c49 solid;
+  border: none;
+  background-color: #0d8615;
+
+  & img {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
 }

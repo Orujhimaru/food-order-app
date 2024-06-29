@@ -57,28 +57,43 @@ export default function SettingsProductManagement() {
                   value={editedField2}
                   placeholder={dish.price}
                 ></input>
+                <button
+                  className="edit-button-save"
+                  onClick={() =>
+                    editModeToggle(dish.id, editedField1, editedField2)
+                  }
+                >
+                  <div className="button-elements-container">
+                    <img src={"/public/save_icon.png"}></img>
+                    <h4>Save dish</h4>
+                  </div>
+                </button>
               </>
             ) : (
               <>
                 <h4>{dish.description}</h4>
                 <h4>{dish.price}</h4>
+                <button
+                  className="edit-button"
+                  onClick={() =>
+                    editModeToggle(dish.id, editedField1, editedField2)
+                  }
+                >
+                  <div className="button-elements-container">
+                    <img src={"/public/edit-icon.svg"}></img>
+                    <h4>Edit dish</h4>
+                  </div>
+                </button>
               </>
             )}
-            <button
-              className="edit-button"
-              onClick={() =>
-                editModeToggle(dish.id, editedField1, editedField2)
-              }
-            >
-              <img src={"/public/edit-icon.svg"}></img>
-              Edit dish
-            </button>
           </div>
         )
       );
     });
     return arr;
   }
+  //                editMode[0] === true && editMode[1] === dish.id
+  // ? "edit-button-save"
 
   return (
     <div className="settings-cat-main-container">
