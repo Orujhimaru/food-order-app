@@ -13,6 +13,7 @@ body {
   padding-inline-start: 20rem;
   color: white;
 }
+
 nav {
   background: var(--nav-bg);
   position: fixed;
@@ -80,16 +81,4 @@ nav {
   border-radius: 0 var(--border-radius) 0 0;
   bottom: calc(var(--border-radius) * -1);
   box-shadow: 5px -5px 0 5px var(--body-bg);
-}
-
-.nav-list li:nth-child(1) a {
-  view-transition-name: test;
-}
-
-.nav-list li:nth-child(2) a {
-  view-transition-name: test-2;
-}
-
-.nav-list li:nth-child(3) a {
-  view-transition-name: test-3;
 }
