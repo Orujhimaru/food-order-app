@@ -15,9 +15,8 @@
 }
 
 .dishes-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
   row-gap: 32px;
   margin-block: 20px;
@@ -47,7 +46,6 @@ input {
 .new-dish {
   display: flex;
   border: none;
-  width: 280px;
   height: 342.5px;
   flex-direction: column;
   justify-content: center;
@@ -77,8 +75,6 @@ input {
 
 .dish {
   display: flex;
-  flex: 1 1 220px;
-  max-width: 280px;
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 22px;
@@ -135,7 +131,8 @@ input {
   border-top-right-radius: 0px;
   // border: 2px #393c49 solid;
   border: none;
-  background-color: #0d8615;
+  background-color: #7bcb6d;
+  color: #000000;
 
   & img {
     width: 20px;

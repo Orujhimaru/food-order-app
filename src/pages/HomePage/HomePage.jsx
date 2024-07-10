@@ -8,6 +8,7 @@ import DishesMenu from "@/components/DishesMenu/DishesMenu";
 import { useState, useEffect } from "react";
 import { foods, categories } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
+
 import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 
 function HomePage() {
@@ -27,6 +28,7 @@ function HomePage() {
           setCategory={setCategory}
           category={category}
         />
+
         <SettingsProductManagement />
       </div>
     </div>
