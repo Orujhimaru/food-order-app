@@ -2,66 +2,86 @@ import "./SettingsProductManagement.scss";
 import React from "react";
 import { foods, categories } from "@/db/food";
 import CategoryTabs from "@/components/CategoryTabs/CategoryTabs";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function SettingsProductManagement() {
   const [category, setCategory] = useState("all");
   const [foodList, setFoodList] = useState(foods); // yemekler
-  const [editMode, setEditMode] = useState([false, -1]); // BU FIELD INPUT VE YA H4 GOSTERILMESINI SAGLIYOR, ID ve TRUE/FALSE valuelari ile.
-  const [editedField1, setEditedField] = useState(""); // 1. input field in degeri.
+  const [editState, setEditState] = useState(false);
+  const [editedFoodItem, setEditedFoodItem] = useState({});
 
-  const [editedField2, setEditedField2] = useState("");
+  const inputRef1 = useRef();
+  const inputRef2 = useRef();
 
-  function editModeToggle(id, desc, price) {
-    if (editMode[1] !== id && editMode[0] === true) {
-      return;
+  function setEditMode(dish) {
+    if (isObjectEmpty(editedFoodItem)) {
+      setEditState(true);
+      setEditedFoodItem(dish);
+    } else {
+      setEditState(false);
     }
-    setEditMode((previousMode) => [!previousMode[0], id]);
-    editFoodList(id, desc, price);
-    setEditedField("");
-    setEditedField2("");
+    // if (editedFoodItem.id !== id || editState === true) {
+    //   return;
+    // }
+
+    // setEditMode((previousMode) => [!previousMode[0], id]);
+    // editFoodList(id, desc, price);
+    // setEditedField("");
+    // setEditedField2("");
+    // editFoodList();
   }
-  // console.log(foodList);
 
-  function editFoodList(id, desc, price) {
-    if (desc === "" || price === "") {
-      return;
-    }
-    setFoodList((prevFoodList) =>
-      prevFoodList.map((dish) => {
-        return dish.id === id
-          ? { ...dish, description: desc, price: price }
-          : dish;
+  // console.log(foodList);
+  function isObjectEmpty(objectName) {
+    return Object.keys(objectName).length === 0;
+  }
+
+  function editFoodList(newObj) {
+    setFoodList((previousList) =>
+      previousList.map((dish) => {
+        return dish.id === newObj.id ? newObj : dish;
       })
     );
+    setEditedFoodItem({});
+    console.log(foodList);
+    console.log(editedFoodItem);
   }
 
   function renderDishes(dishes) {
-    console.log("edit mode started");
     let arr = dishes.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
             <img src={dish.image}></img>
-            {editMode[0] === true && editMode[1] === dish.id ? (
+            {editState === true && editedFoodItem.id === dish.id ? (
               <>
                 <input
                   type="text"
-                  onChange={(event) => setEditedField(event.target.value)}
-                  value={editedField1}
+                  // onChange={(event) => setEditedField(event.target.value)}
+                  ref={inputRef1}
                   placeholder={dish.description}
                 ></input>
                 <input
                   type="text"
-                  onChange={(event) => setEditedField2(event.target.value)}
-                  value={editedField2}
+                  // onChange={(event) => setEditedField2(event.target.value)}
+                  // value={editedField2}
+                  ref={inputRef2}
                   placeholder={dish.price}
                 ></input>
                 <button
                   className="edit-button-save"
-                  onClick={() =>
-                    editModeToggle(dish.id, editedField1, editedField2)
-                  }
+                  onClick={() => {
+                    const newObj = {
+                      ...dish,
+                      description: inputRef1.current,
+                      price: inputRef2.current,
+                    };
+                    {
+                      console.log(newObj);
+                    }
+                    editFoodList(newObj);
+                    // setEditMode(newObj);
+                  }}
                 >
                   <div className="button-elements-container">
                     <img src={"/public/save_icon.png"}></img>
@@ -75,9 +95,10 @@ export default function SettingsProductManagement() {
                 <h4>{dish.price}</h4>
                 <button
                   className="edit-button"
-                  onClick={() =>
-                    editModeToggle(dish.id, editedField1, editedField2)
-                  }
+                  onClick={() => {
+                    setEditMode(dish);
+                    setEditedFoodItem(dish);
+                  }}
                 >
                   <div className="button-elements-container">
                     <img src={"/public/edit-icon.svg"}></img>
