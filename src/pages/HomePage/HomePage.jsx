@@ -10,6 +10,7 @@ import { foods, categories } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
 
 import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
+import NavBar from "../../components/NavBar/NavBar";
 
 function HomePage() {
   const { fireStoreUser } = useAuth();
@@ -18,16 +19,9 @@ function HomePage() {
 
   return (
     <div>
-      <Sidebar />
-
+      <NavBar />
       <div className="mainRoot">
         <Header />
-
-        <CategoryTabs
-          setCategory={setCategory}
-          category={category}
-          categories={categories}
-        />
 
         <CategoryTabs
           categories={categories}
