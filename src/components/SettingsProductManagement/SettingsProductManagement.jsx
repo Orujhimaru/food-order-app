@@ -100,7 +100,6 @@ export default function SettingsProductManagement() {
         )
       );
     });
-    console.log(arr);
     return arr;
   }
 
