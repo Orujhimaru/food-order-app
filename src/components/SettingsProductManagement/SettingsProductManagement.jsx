@@ -19,36 +19,29 @@ export default function SettingsProductManagement() {
       setEditedFoodItem(dish);
     } else {
       setEditState(false);
+      setEditedFoodItem({});
     }
-    // if (editedFoodItem.id !== id || editState === true) {
-    //   return;
-    // }
-
-    // setEditMode((previousMode) => [!previousMode[0], id]);
-    // editFoodList(id, desc, price);
-    // setEditedField("");
-    // setEditedField2("");
-    // editFoodList();
   }
 
-  // console.log(foodList);
   function isObjectEmpty(objectName) {
     return Object.keys(objectName).length === 0;
   }
 
   function editFoodList(newObj) {
-    setFoodList((previousList) =>
-      previousList.map((dish) => {
+    if (newObj.description.length === 0 || newObj.price.length === 0) {
+      return;
+    }
+    setFoodList(
+      foodList.map((dish) => {
         return dish.id === newObj.id ? newObj : dish;
       })
     );
-    setEditedFoodItem({});
-    console.log(foodList);
-    console.log(editedFoodItem);
   }
 
   function renderDishes(dishes) {
-    let arr = dishes.map((dish) => {
+    console.log(dishes);
+    console.log(foodList);
+    let arr = dishes?.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
@@ -73,14 +66,11 @@ export default function SettingsProductManagement() {
                   onClick={() => {
                     const newObj = {
                       ...dish,
-                      description: inputRef1.current,
-                      price: inputRef2.current,
+                      description: inputRef1.current.value,
+                      price: inputRef2.current.value,
                     };
-                    {
-                      console.log(newObj);
-                    }
                     editFoodList(newObj);
-                    // setEditMode(newObj);
+                    setEditMode(newObj);
                   }}
                 >
                   <div className="button-elements-container">
@@ -97,7 +87,6 @@ export default function SettingsProductManagement() {
                   className="edit-button"
                   onClick={() => {
                     setEditMode(dish);
-                    setEditedFoodItem(dish);
                   }}
                 >
                   <div className="button-elements-container">
@@ -111,10 +100,9 @@ export default function SettingsProductManagement() {
         )
       );
     });
+    console.log(arr);
     return arr;
   }
-  //                editMode[0] === true && editMode[1] === dish.id
-  // ? "edit-button-save"
 
   return (
     <div className="settings-cat-main-container">
