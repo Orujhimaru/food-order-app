@@ -10,7 +10,7 @@ function CategoryTabs({ setCategory, category, categories }) {
           onClick={() => {
             setCategory(cat.key);
           }}
-          className={cat.key === category ? "active" : ""}
+          className={cat.key === category ? "active-cat" : ""}
           key={cat.id}
         >
           {cat.name}
