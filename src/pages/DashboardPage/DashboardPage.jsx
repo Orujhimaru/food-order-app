@@ -4,11 +4,12 @@ import "./DashboardPage.scss";
 import OrderCard from "../../components/OrderCard/OrderCard";
 import CircularReport from "../../components/CircularReport/CircularReport";
 import OrderReports from "../../components/OrderReports/OrderReports";
+import NavBar from "../../components/NavBar/NavBar";
 
 function DashboardPage() {
   return (
     <div>
-      <Sidebar />
+      <NavBar />
       <div className="mainRoot">
         {/* <h1 style={{ height: "100px" }}>Homepage example</h1> */}
         <div className="container-100">
