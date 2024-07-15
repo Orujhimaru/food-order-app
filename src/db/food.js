@@ -34,6 +34,13 @@ export const categories = [
   },
 ];
 
+export const orderTypes = [
+  { key: "all", name: "All" },
+  { key: "Dine In", name: "Dine In" },
+  { key: "To go", name: "To go" },
+  { key: "Delivery", name: "Delivery" },
+];
+
 const [_, coldDishes, grill, appetizer, dessert, soup] = categories;
 
 export const foods = [
