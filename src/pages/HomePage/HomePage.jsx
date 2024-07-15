@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { foods, categories } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
 
+
 function HomePage() {
   const { fireStoreUser } = useAuth();
 
@@ -19,9 +20,11 @@ function HomePage() {
       <Sidebar />
       <div className="mainRoot">
         <Header />
+
         <div className="dishesMen">
           <DishesMenu />
         </div>
+
       </div>
     </div>
   );
