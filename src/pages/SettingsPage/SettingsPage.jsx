@@ -3,6 +3,7 @@ import "./SettingsPage.scss";
 import HomePage from "../HomePage/HomePage";
 import SettingsSideBar from "./SettingsSideBar";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 
 function SettingsPage() {
   const { section } = useParams();
@@ -17,7 +18,9 @@ function SettingsPage() {
           <h1 className="settings-text">Settings</h1>
           <SettingsSideBar />
         </div>
-        <div className="main-content">Product-management</div>
+        <div className="main-content">
+          <SettingsProductManagement />
+        </div>
       </div>
     ),
     "your-restaurant": (
