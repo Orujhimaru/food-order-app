@@ -4,6 +4,7 @@ import OrderCard from "../../components/OrderCard/OrderCard";
 import CircularReport from "../../components/CircularReport/CircularReport";
 import OrderReports from "../../components/OrderReports/OrderReports";
 import NavBar from "../../components/NavBar/NavBar";
+import MostOrderedDishes from "../../components/MostOrderedDishes/MostOrderedDishes";
 
 function DashboardPage() {
   return (

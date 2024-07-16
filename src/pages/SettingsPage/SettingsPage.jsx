@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import "./SettingsPage.scss";
 import SettingsSideBar from "./SettingsSideBar";
 import NavBar from "../../components/NavBar/NavBar";
+import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 
 function SettingsPage() {
   const { section } = useParams();
@@ -16,7 +17,9 @@ function SettingsPage() {
           <h1 className="settings-text">Settings</h1>
           <SettingsSideBar />
         </div>
-        <div className="main-content">Product-management</div>
+        <div className="main-content">
+          <SettingsProductManagement />
+        </div>
       </div>
     ),
     "your-restaurant": (

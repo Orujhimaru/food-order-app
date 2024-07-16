@@ -12,7 +12,6 @@ import { useAuth } from "@/components/AuthProvider";
 import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 import NavBar from "../../components/NavBar/NavBar";
 
-
 function HomePage() {
   const { fireStoreUser } = useAuth();
 
@@ -29,7 +28,6 @@ function HomePage() {
           setCategory={setCategory}
           category={category}
         />
-        <SettingsProductManagement />
       </div>
     </div>
   );
