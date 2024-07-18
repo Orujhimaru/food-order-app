@@ -1,8 +1,6 @@
 @import "@/styles/abstracts/_variables";
 
 .settings-cat-main-container {
-  display: flex;
-  flex-direction: column;
   background-color: $secondary-bg;
   padding: 24px;
   border-radius: $border-radius;
@@ -15,17 +13,37 @@
 }
 
 .dishes-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 16px;
   row-gap: 32px;
   margin-block: 20px;
 }
 
+input {
+  font-size: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+  padding: 5px 10px;
+  transition: box-shadow 100ms ease-in, border 100ms ease-in,
+    background-color 100ms ease-in;
+  border: 2px solid #dee1e2;
+  color: rgb(255, 255, 255);
+  background: $secondary-bg;
+  display: block;
+  height: 36px;
+  :hover {
+    border-color: #ccc;
+  }
+  :focus {
+    border-color: #3d3d3d;
+    background: $secondary-bg;
+  }
+}
+
 .new-dish {
   display: flex;
-  width: 220px;
+  border: none;
   height: 342.5px;
   flex-direction: column;
   justify-content: center;
@@ -55,11 +73,6 @@
 
 .dish {
   display: flex;
-  flex: 1;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 200px;
-  max-width: 240px;
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 22px;
@@ -92,4 +105,36 @@
   border: none;
   color: #ea7c69;
   background-color: #50343a;
+  & img {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
+}
+
+.button-elements-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.edit-button-save {
+  width: calc(100% + 80px);
+  align-self: center;
+  padding: 12px 0;
+  margin-top: auto;
+  border-radius: 6px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  // border: 2px #393c49 solid;
+  border: none;
+  background-color: #7bcb6d;
+  color: #000000;
+
+  & img {
+    width: 20px;
+    height: 20px;
+    color: white;
+  }
 }
