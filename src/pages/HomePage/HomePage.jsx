@@ -8,6 +8,7 @@ import DishesMenu from "@/components/DishesMenu/DishesMenu";
 import { useState, useEffect } from "react";
 import { foods, categories } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
+import NavBar from "../../components/NavBar/NavBar";
 
 
 function HomePage() {
@@ -17,7 +18,9 @@ function HomePage() {
 
   return (
     <div>
-      <Sidebar />
+
+      <NavBar />
+
       <div className="mainRoot">
         <Header />
 
