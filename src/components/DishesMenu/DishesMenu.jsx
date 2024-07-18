@@ -1,35 +1,54 @@
-import { foods } from "../../db/food";
+import React, { useState, useEffect } from "react";
+import { foods, orderTypes } from "../../db/food";
 import "./DishesMenu.scss";
 
-function DishesMenu({ category }) {
-  let filteredDishes = [];
-  function filterDishesByCategory() {
-    if (category === "all") {
-      filteredDishes = foods;
+function DishesMenu() {
+  const [orderType, setOrderType] = useState("all");
+  const [filteredDishes, setFilteredDishes] = useState(foods);
+
+  useEffect(() => {
+    if (orderType === "all") {
+      setFilteredDishes(foods);
     } else {
-      filteredDishes = foods.filter((dish) => dish.category.key === category);
+      setFilteredDishes(foods.filter((dish) => dish.orderType === orderType));
     }
-  }
-  filterDishesByCategory();
+  }, [orderType]);
+
+  const handleOrderTypeChange = (event) => {
+    setOrderType(event.target.value);
+  };
 
   return (
     <div>
       <div className="menu-top-section">
-        <h2 className="menu-title">Choose Dishes </h2>
+        <h2 className="menu-title">Choose Dishes</h2>
       </div>
-
-      <div className="menu-container">
-        {filteredDishes.map((food) => {
-          const { id, image, description, price, bowl } = food;
-          return (
-            <div className="meal-card" key={id}>
-              <img className="meal-image" src={image} />
-              <p className="meal-description"> {description}</p>
-              <p className="meal-price">{price}</p>
-             
-            </div>
-          );
-        })}
+      <div className="ordertype-ticket">
+        <div className="ordertype-general">
+          <select
+            id="orderType-select"
+            value={orderType}
+            onChange={handleOrderTypeChange}
+          >
+            {orderTypes.map((type) => (
+              <option key={type.key} value={type.key}>
+                {type.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="menu-container">
+          {filteredDishes.map((food) => {
+            const { id, image, description, price } = food;
+            return (
+              <div className="meal-card" key={id}>
+                <img className="meal-image" src={image} alt={description} />
+                <p className="meal-description">{description}</p>
+                <p className="meal-price">{price}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
