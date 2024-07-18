@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import "./SettingsPage.scss";
-import HomePage from "../HomePage/HomePage";
 import SettingsSideBar from "./SettingsSideBar";
-import Sidebar from "../../components/Sidebar/Sidebar";
+import NavBar from "../../components/NavBar/NavBar";
 import SettingsProductManagement from "../../components/SettingsProductManagement/SettingsProductManagement";
 
 function SettingsPage() {
@@ -12,7 +11,7 @@ function SettingsPage() {
     "product-management": (
       <div className="settings-page-content">
         <div className="sidebar-container">
-          <Sidebar />
+          <NavBar />
         </div>
         <div className="settings-sideibar-container">
           <h1 className="settings-text">Settings</h1>
@@ -26,7 +25,7 @@ function SettingsPage() {
     "your-restaurant": (
       <div className="settings-page-content">
         <div className="sidebar-container">
-          <Sidebar />
+          <NavBar />
         </div>
         <div className="settings-sideibar-container">
           <h1 className="settings-text">Settings</h1>

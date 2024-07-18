@@ -34,7 +34,6 @@ export default function SettingsProductManagement() {
   };
 
   function renderDishes(dishes) {
-    console.log(dishes);
     let arr = dishes?.map((dish) => {
       return (
         (dish.category.key === category || category === "all") && (
