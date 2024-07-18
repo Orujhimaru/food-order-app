@@ -22,8 +22,6 @@ function DishesMenu() {
     <div>
       <div className="menu-top-section">
         <h2 className="menu-title">Choose Dishes</h2>
-      </div>
-      <div className="ordertype-ticket">
         <div className="ordertype-general">
           <select
             id="orderType-select"
@@ -37,6 +35,8 @@ function DishesMenu() {
             ))}
           </select>
         </div>
+      </div>
+      <div className="ordertype-ticket">
         <div className="menu-container">
           {filteredDishes.map((food) => {
             const { id, image, description, price } = food;

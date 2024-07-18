@@ -76,19 +76,19 @@ function NavBar() {
     const arr = arrOfListElements.map((element, index) => {
       if (index === 0) {
         return (
-          <li className="logo">
+          <li key={index} className="logo">
             <img src={Logo} />
           </li>
         );
       } else if (index === arrOfListElements.length - 1) {
         return (
-          <li className="exit-logo">
+          <li key={index} className="exit-logo">
             <a href={arrOfPaths[index - 1]}>{element}</a>
           </li>
         );
       } else {
         return (
-          <li>
+          <li key={index}>
             <a href={arrOfPaths[index - 1]}>{element}</a>
           </li>
         );
