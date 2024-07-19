@@ -11,18 +11,20 @@ function PopUp({ save, onClose, onInput }) {
         </button>
       </div>
       <form>
-        <label>Food name:</label>
+        <label>Food description:</label>
         <input
           onChange={(event) => onInput(event)}
+          name="description"
           className="pop-up-text"
           type="text"
           id="fname"
           placeholder="Food name.."
         />
 
-        <label>Description</label>
+        <label>Food Price</label>
         <input
           onChange={(event) => onInput(event)}
+          name="price"
           className="pop-up-text"
           type="text"
           id="desc"
