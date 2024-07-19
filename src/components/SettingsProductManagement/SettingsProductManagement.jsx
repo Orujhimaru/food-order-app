@@ -3,11 +3,13 @@ import React from "react";
 import { foods, categories } from "@/db/food";
 import CategoryTabs from "@/components/CategoryTabs/CategoryTabs";
 import { useState, useRef } from "react";
+import PopUp from "./PopUp.jsx";
 
 export default function SettingsProductManagement() {
   const [category, setCategory] = useState("all");
   const [foodList, setFoodList] = useState(foods); // yemekler
   const [editedFoodItem, setEditedFoodItem] = useState();
+  const [showPopUp, setShowPopUp] = useState(false);
 
   function editFoodList() {
     // Updates the list after checking input values.
@@ -30,7 +32,6 @@ export default function SettingsProductManagement() {
       ...editedFoodItem,
       [event.target.name]: event.target.value,
     });
-    event.preventDefault();
   };
 
   function renderDishes(dishes) {
@@ -100,10 +101,28 @@ export default function SettingsProductManagement() {
         category={category}
       />
       <div className="dishes-container">
-        <button className="new-dish">
+        <button
+          className="new-dish"
+          onClick={() => {
+            setShowPopUp(true);
+          }}
+        >
           <h3>+</h3>
           <h3>Add dish</h3>
         </button>
+        {showPopUp && (
+          <PopUp
+            save={() => {
+              editFoodList();
+            }}
+            onClose={() => {
+              setShowPopUp(false);
+            }}
+            onInput={() => {
+              (event) => handleInputChange(event);
+            }}
+          />
+        )}
         {renderDishes(foodList)}
       </div>
     </div>
