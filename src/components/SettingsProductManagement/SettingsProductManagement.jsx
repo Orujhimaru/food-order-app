@@ -27,6 +27,20 @@ export default function SettingsProductManagement() {
     setEditedFoodItem({});
   }
 
+  function addToFoodList() {
+    // Updates the list after checking input values.
+    if (
+      editedFoodItem.description.length === 0 ||
+      editedFoodItem.price.length === 0
+    ) {
+      return;
+    }
+    let arr = foodList;
+    arr.push(editedFoodItem);
+    setFoodList(arr);
+    setEditedFoodItem({});
+  }
+
   const handleInputChange = (event) => {
     setEditedFoodItem({
       ...editedFoodItem,
@@ -113,7 +127,7 @@ export default function SettingsProductManagement() {
         {showPopUp && (
           <PopUp
             save={() => {
-              editFoodList();
+              addToFoodList();
             }}
             onClose={() => {
               setShowPopUp(false);
