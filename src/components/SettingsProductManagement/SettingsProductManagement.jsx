@@ -39,9 +39,29 @@ export default function SettingsProductManagement() {
     arr.push(editedFoodItem);
     setFoodList(arr);
     setEditedFoodItem({});
+    console.log(foodList);
   }
 
   const handleInputChange = (event) => {
+    if (event.target.name === "category") {
+      setEditedFoodItem({
+        ...editedFoodItem,
+        [event.target.name]: event.target.value,
+        category: categories[event.target.value - 1],
+        id: foodList.length + 1,
+        image: "/src/assets/Image-2.png",
+      });
+    } else {
+      setEditedFoodItem({
+        ...editedFoodItem,
+        [event.target.name]: event.target.value,
+        id: foodList.length + 1,
+        image: "/src/assets/Image-2.png",
+      });
+    }
+  };
+
+  const handleInput = (event) => {
     setEditedFoodItem({
       ...editedFoodItem,
       [event.target.name]: event.target.value,
@@ -50,6 +70,7 @@ export default function SettingsProductManagement() {
 
   function renderDishes(dishes) {
     let arr = dishes?.map((dish) => {
+      console.log(category);
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
@@ -59,13 +80,13 @@ export default function SettingsProductManagement() {
                 <input
                   name="description"
                   type="text"
-                  onChange={(event) => handleInputChange(event)}
+                  onChange={(event) => handleInput(event)}
                   placeholder={dish.description}
                 ></input>
                 <input
                   name="price"
                   type="text"
-                  onChange={(event) => handleInputChange(event)}
+                  onChange={(event) => handleInput(event)}
                   placeholder={dish.price}
                 ></input>
                 <button
@@ -128,12 +149,13 @@ export default function SettingsProductManagement() {
           <PopUp
             save={() => {
               addToFoodList();
+              setShowPopUp(false);
             }}
             onClose={() => {
               setShowPopUp(false);
             }}
-            onInput={() => {
-              (event) => handleInputChange(event);
+            onInput={(event) => {
+              handleInputChange(event);
             }}
           />
         )}
