@@ -1,5 +1,3 @@
-import { categories } from "@/db/food";
-import { useState } from "react";
 import "./CategoryTabs.scss";
 
 function CategoryTabs({ setCategory, category, categories }) {

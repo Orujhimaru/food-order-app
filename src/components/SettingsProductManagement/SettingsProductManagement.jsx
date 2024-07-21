@@ -3,11 +3,13 @@ import React from "react";
 import { foods, categories } from "@/db/food";
 import CategoryTabs from "@/components/CategoryTabs/CategoryTabs";
 import { useState, useRef } from "react";
+import PopUp from "./PopUp.jsx";
 
 export default function SettingsProductManagement() {
   const [category, setCategory] = useState("all");
   const [foodList, setFoodList] = useState(foods); // yemekler
   const [editedFoodItem, setEditedFoodItem] = useState();
+  const [showPopUp, setShowPopUp] = useState(false);
 
   function editFoodList() {
     // Updates the list after checking input values.
@@ -25,16 +27,50 @@ export default function SettingsProductManagement() {
     setEditedFoodItem({});
   }
 
+  function addToFoodList() {
+    // Updates the list after checking input values.
+    if (
+      editedFoodItem.description.length === 0 ||
+      editedFoodItem.price.length === 0
+    ) {
+      return;
+    }
+    let arr = foodList;
+    arr.push(editedFoodItem);
+    setFoodList(arr);
+    setEditedFoodItem({});
+    console.log(foodList);
+  }
+
   const handleInputChange = (event) => {
+    if (event.target.name === "category") {
+      setEditedFoodItem({
+        ...editedFoodItem,
+        [event.target.name]: event.target.value,
+        category: categories[event.target.value - 1],
+        id: foodList.length + 1,
+        image: "/src/assets/Image-2.png",
+      });
+    } else {
+      setEditedFoodItem({
+        ...editedFoodItem,
+        [event.target.name]: event.target.value,
+        id: foodList.length + 1,
+        image: "/src/assets/Image-2.png",
+      });
+    }
+  };
+
+  const handleInput = (event) => {
     setEditedFoodItem({
       ...editedFoodItem,
       [event.target.name]: event.target.value,
     });
-    event.preventDefault();
   };
 
   function renderDishes(dishes) {
     let arr = dishes?.map((dish) => {
+      console.log(category);
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
@@ -44,13 +80,13 @@ export default function SettingsProductManagement() {
                 <input
                   name="description"
                   type="text"
-                  onChange={(event) => handleInputChange(event)}
+                  onChange={(event) => handleInput(event)}
                   placeholder={dish.description}
                 ></input>
                 <input
                   name="price"
                   type="text"
-                  onChange={(event) => handleInputChange(event)}
+                  onChange={(event) => handleInput(event)}
                   placeholder={dish.price}
                 ></input>
                 <button
@@ -100,10 +136,29 @@ export default function SettingsProductManagement() {
         category={category}
       />
       <div className="dishes-container">
-        <button className="new-dish">
+        <button
+          className="new-dish"
+          onClick={() => {
+            setShowPopUp(true);
+          }}
+        >
           <h3>+</h3>
           <h3>Add dish</h3>
         </button>
+        {showPopUp && (
+          <PopUp
+            save={() => {
+              addToFoodList();
+              setShowPopUp(false);
+            }}
+            onClose={() => {
+              setShowPopUp(false);
+            }}
+            onInput={(event) => {
+              handleInputChange(event);
+            }}
+          />
+        )}
         {renderDishes(foodList)}
       </div>
     </div>
