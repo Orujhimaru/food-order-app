@@ -45,7 +45,7 @@ function PopUp({ save, onClose, onInput }) {
         onClick={save}
         className="submit-pop-up"
         type="submit"
-        value="Submit"
+        value="Create"
       />
     </div>
   );

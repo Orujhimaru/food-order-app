@@ -11,7 +11,7 @@
 .submit-pop-up {
   width: 100%;
   background-color: #4caf50;
-  padding: 14px 20px;
+  padding: 5px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
@@ -20,6 +20,14 @@
 
 .submit-pop-up:hover {
   background-color: #45a049;
+}
+
+select {
+  background-color: #626562;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: white;
 }
 
 .pop-up {
