@@ -4,6 +4,7 @@ import "./OrderReports.scss";
 import DropdownFilter from "../DropdownFilter/DropdownFilter";
 import ReportElement from "./ReportElement";
 import { arrOfOrders } from "../../db/data";
+import { useRef } from "react";
 
 // mock data
 function returnOrderReportElements(array) {
@@ -20,7 +21,26 @@ function returnOrderReportElements(array) {
 }
 
 function OrderReports() {
-  console.log("render ALL");
+  const [scrollPosition, setScrollPosition] = useState({
+    scrollTop: 0,
+  });
+  const scrollDemoRef = useRef(null);
+  const dropdown = useRef(null);
+
+  const handleScroll = () => {
+    if (scrollDemoRef.current) {
+      const { scrollTop } = scrollDemoRef.current;
+      setScrollPosition({ scrollTop });
+    }
+    if (scrollPosition.scrollTop > 100) {
+      // activate transition
+      // dropdown.className = "fade-out";
+      // console.log(dropdown.className);
+    } else {
+      dropdown.className = "";
+    }
+  };
+
   // Orders array state
   const [elements, setElements] = useState(
     returnOrderReportElements(arrOfOrders)
@@ -45,10 +65,14 @@ function OrderReports() {
   }, [category]);
 
   return (
-    <div className="order-report-container">
+    <div
+      className="order-report-container"
+      ref={scrollDemoRef}
+      onScroll={handleScroll}
+    >
       <div style={{ marginTop: "16px" }} className="order-report-header">
         <h3>Order Report</h3>
-        <div style={{ position: "relative" }}>
+        <div ref={dropdown} style={{ position: "relative" }}>
           <DropdownFilter
             setCat={setCat}
             icon={"/public/filter.svg"}

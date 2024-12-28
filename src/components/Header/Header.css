@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #393c49;
+  color: white;
+}
+
+.headerDate h1 {
+  font-size: 18px;
+  line-height: 39.2px;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+}
+.headerDate p {
+  font-size: 16px;
+  line-height: 22.4px;
+  color: rgb(224, 230, 233);
+  font-family: "Barlow", sans-serif;
+}
+
+.headerSearch {
+  display: flex;
+  align-items: center;
+  width: 235px;
+  gap: 8px;
+  height: 48px;
+  background-color: rgb(45, 48, 62);
+  border: 1px solid rgb(57, 60, 73);
+  border-radius: 8px;
+}
+.headerSearch input {
+  background-color: transparent;
+  border: none;
+  width: 235px;
+  height: 48px;
+  outline: none;
+}
+.headerSearch input::-moz-placeholder {
+  color: #888888;
+}
+.headerSearch input::placeholder {
+  color: #888888;
+}
+
+input:focus {
+  color: #fff;
+}
+
+.headerIcon {
+  margin-left: 10px;
+}/*# sourceMappingURL=Header.css.map */

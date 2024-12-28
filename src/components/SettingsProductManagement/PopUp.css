@@ -1,0 +1,77 @@
+.pop-up-text {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-pop-up {
+  width: 100%;
+  background-color: #4caf50;
+  padding: 5px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-pop-up:hover {
+  background-color: #45a049;
+}
+
+select {
+  background-color: #626562;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+}
+
+.pop-up {
+  border-radius: 5px;
+  background-color: #252836;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.cross-stand-alone {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.cross-stand-alone:before, .cross-stand-alone:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #dddddd;
+  border-radius: 4px;
+}
+.cross-stand-alone:before {
+  transform: rotate(45deg);
+}
+.cross-stand-alone:after {
+  transform: rotate(-45deg);
+}
+.cross-stand-alone span {
+  display: block;
+}
+
+.pop-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=PopUp.css.map */

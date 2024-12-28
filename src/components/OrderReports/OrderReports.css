@@ -1,20 +1,33 @@
-@import "../../styles/abstracts/placeholders";
-@import "../../styles/abstracts/variables";
+.order-report-container {
+  overflow-y: auto;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: #d7d4d6 #fff;
+  resize: none;
+}
+.order-report-container::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.order-report-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #d7d4d6;
+}
+.order-report-container:hover .order-report-container:active .order-report-container:focus {
+  overflow-y: auto;
+}
 
 .order-report-container {
   width: 100%;
   height: 100%;
   min-height: 520px;
-  background-color: $secondary-bg;
+  background-color: #1f1d2b;
   display: flex;
   flex-direction: column;
-  border-radius: $border-radius;
+  border-radius: 8px;
   overflow: auto;
-  // overflow-x: visible;
-  // overflow-y: scroll;
-
-  @extend %custom-scroll-bar;
-  scrollbar-color: #d1d1d1 $secondary-bg;
+  scrollbar-color: #d1d1d1 #1f1d2b;
 }
 
 .fade-out {
@@ -27,16 +40,14 @@
   padding: 16px 24px;
   padding-bottom: 0px;
   align-items: center;
-
-  * {
-    display: flex;
-    align-content: flex-start;
-  }
-
-  h3 {
-    font-weight: 600;
-    font-size: 24px;
-  }
+}
+.order-report-header * {
+  display: flex;
+  align-content: flex-start;
+}
+.order-report-header h3 {
+  font-weight: 600;
+  font-size: 24px;
 }
 
 .order-reports {
@@ -48,7 +59,7 @@
 
 .order-report-sticky {
   padding-top: 40px !important;
-  background-color: $secondary-bg;
+  background-color: #1f1d2b;
   position: sticky;
   top: -1px;
   font-size: 20px !important;
@@ -83,20 +94,24 @@
   background-color: #262531;
   padding: 12px 24px;
 }
+
 .order-status {
   padding: 8px 16px;
-  border-radius: $border-radius;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 16px;
 }
+
 .order-status-completed {
   color: #50d1aa;
   background-color: #314c4e;
 }
+
 .order-status-pending {
   color: #ffb572;
   background-color: #4c3b39;
 }
+
 .order-status-preparing {
   color: #9290fe;
   background-color: #363455;
@@ -118,28 +133,25 @@
   padding: 4px 8px;
   right: 0px;
   top: 50px;
-  border-radius: $border-radius;
-
-  & div:hover {
-    cursor: pointer;
-  }
-
-  & div {
-    padding: 8px;
-  }
+  border-radius: 8px;
+}
+.order-dropdown div:hover {
+  cursor: pointer;
+}
+.order-dropdown div {
+  padding: 8px;
 }
 
 .order-report-filter-btn {
-  & img {
-    max-width: 20px;
-    max-height: 20px;
-    margin-right: 10px;
-  }
-
   align-items: center;
   color: white;
-  background-color: $secondary-bg;
+  background-color: #1f1d2b;
   padding: 10px 16px;
   border: rgb(157, 157, 157) 2px solid;
-  border-radius: $border-radius;
+  border-radius: 8px;
 }
+.order-report-filter-btn img {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 10px;
+}/*# sourceMappingURL=OrderReports.css.map */

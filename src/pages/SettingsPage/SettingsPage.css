@@ -1,0 +1,28 @@
+.settings-page-content {
+  display: flex;
+  background-color: rgb(57, 60, 73);
+  width: 100%;
+  height: 100%;
+}
+
+.settings-sideibar-container {
+  margin-left: 8em;
+}
+
+.main-content {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+  background-color: rgb(31, 29, 43);
+  margin-top: 4em;
+  margin-left: 10px;
+  border-radius: 8px;
+}
+
+.settings-text {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: white;
+}/*# sourceMappingURL=SettingsPage.css.map */

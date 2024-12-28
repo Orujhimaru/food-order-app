@@ -1,0 +1,43 @@
+.settings-menu {
+  border-radius: 8px;
+  width: 20vw;
+  background-color: rgb(31, 29, 43);
+  color: rgb(171, 187, 194);
+  height: 100vh;
+  font-family: "Barlow";
+}
+.settings-menu .settings-menu-item {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.settings-menu .settings-menu-item a {
+  padding: 24px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+.settings-menu .settings-menu-item:hover {
+  background-color: #333333;
+}
+.settings-menu .settings-menu-item .settings-menu-active {
+  background: rgba(234, 124, 105, 0.26);
+  color: rgb(234, 124, 105);
+}
+.settings-menu .settings-menu-item .settings-menu-icon {
+  margin-top: 5px;
+}
+.settings-menu .settings-menu-item .settings-menu-text {
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Barlow";
+}
+.settings-menu .settings-menu-item .settings-menu-description {
+  font-size: 12px;
+  color: rgb(171, 187, 194);
+  margin-left: 25px;
+  margin-bottom: 20px;
+}/*# sourceMappingURL=SettingsSideBar.css.map */

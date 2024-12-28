@@ -5,8 +5,21 @@ import { useState } from "react";
 import CircularReportAnimation from "./CircularReportAnimation/CircularReportAnimation";
 
 export default function CircularReport({ delivery, toGo, dineIn }) {
-  const [category, setCat] = useState("a");
+  const [category, setCat] = useState("Today");
 
+  let newDelivery = delivery,
+    newToGo = toGo,
+    newDineIn = dineIn;
+
+  if (category == "month") {
+    newDelivery = Math.floor(delivery * 20);
+    newToGo = Math.floor(toGo * 7);
+    newDineIn = Math.floor(dineIn * 13);
+  } else if (category == "year") {
+    newDelivery = Math.floor(delivery * 180);
+    newToGo = Math.floor(toGo * 80);
+    newDineIn = Math.floor(dineIn * 140);
+  }
   return (
     <div className="circular-report-column">
       <div className="circular-report-header ">
@@ -24,30 +37,30 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
       </div>
       <div className="circular-report-container">
         <CircularReportAnimation
-          delivery={delivery}
-          toGo={toGo}
-          dineIn={dineIn}
+          delivery={newDelivery}
+          toGo={newToGo}
+          dineIn={newDineIn}
         />
         <div className="order-stats">
           <div className="order-stat">
             <div className="stat-indicator-pink"></div>
             <h3>
               Dine In
-              <br /> {dineIn} customers
+              <br /> {newDineIn} customers
             </h3>
           </div>
           <div className="order-stat">
             <div className="stat-indicator-yellow"></div>
             <h3>
               To Go
-              <br /> {toGo} customers
+              <br /> {newToGo} customers
             </h3>
           </div>
           <div className="order-stat">
             <div className="stat-indicator-blue"></div>
             <h3>
               Delivery
-              <br /> {delivery} customers
+              <br /> {newDelivery} customers
             </h3>
           </div>
         </div>

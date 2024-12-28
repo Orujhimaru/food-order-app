@@ -20,7 +20,7 @@ function DashboardPage() {
           </div>
           <div className="container-40">
             <MostOrderedDishes />
-            <CircularReport delivery={1231} dineIn={500} toGo={123} />
+            <CircularReport delivery={126} dineIn={85} toGo={40} />
           </div>
         </div>
       </div>
