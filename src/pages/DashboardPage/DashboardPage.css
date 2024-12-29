@@ -78,4 +78,7 @@
   .circular-report-container {
     flex-direction: row !important;
   }
+  .most-ordered-container {
+    margin-top: 0px;
+  }
 }/*# sourceMappingURL=DashboardPage.css.map */
