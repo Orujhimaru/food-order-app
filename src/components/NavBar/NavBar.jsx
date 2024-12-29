@@ -1,6 +1,6 @@
 import "./NavBar.scss";
 import { useLocation } from "react-router-dom";
-import Logo from "../../../public/app_logo.svg";
+import Logo from "/src/app_logo.svg";
 
 function NavBar() {
   const location = useLocation();

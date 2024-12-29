@@ -2,7 +2,7 @@ export const arrOfOrders = [
   {
     id: "1234dfs141",
     userName: "Eren Jeager",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Spicy seasoned seafood noodles ",
     price: "$125",
     status: "completed",
@@ -10,7 +10,7 @@ export const arrOfOrders = [
   {
     id: "12sf341",
     userName: "Hangi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Raw meat",
     price: "$12532",
     status: "pending",
@@ -18,7 +18,7 @@ export const arrOfOrders = [
   {
     id: "32134141",
     userName: "Levi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Potato",
     price: "$32",
     status: "preparing",
@@ -26,7 +26,7 @@ export const arrOfOrders = [
   {
     id: "123as434ff141",
     userName: "Eren Jeager",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Spicy seasoned seafood noodles ",
     price: "$125",
     status: "completed",
@@ -34,7 +34,7 @@ export const arrOfOrders = [
   {
     id: "1234rfgadsv141",
     userName: "Hangi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Raw meat",
     price: "$12532",
     status: "pending",
@@ -42,7 +42,7 @@ export const arrOfOrders = [
   {
     id: "1234s34f141",
     userName: "Levi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Potato",
     price: "$32",
     status: "preparing",
@@ -50,7 +50,7 @@ export const arrOfOrders = [
   {
     id: "12343gdfs4ff141",
     userName: "Eren Jeager",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Spicy seasoned seafood noodles ",
     price: "$125",
     status: "completed",
@@ -58,7 +58,7 @@ export const arrOfOrders = [
   {
     id: "1234rfgsvfsdf141",
     userName: "Hangi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Raw meat",
     price: "$12532",
     status: "pending",
@@ -66,7 +66,7 @@ export const arrOfOrders = [
   {
     id: "123434ff1sags41",
     userName: "Eren Jeager",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Spicy seasoned seafood noodles ",
     price: "$125",
     status: "completed",
@@ -74,7 +74,7 @@ export const arrOfOrders = [
   {
     id: "1234rgsfdffgsv141",
     userName: "Hangi",
-    img: "/profile-picture.png",
+    img: "src/profile-picture.png",
     orderName: "Raw meat",
     price: "$12532",
     status: "pending",

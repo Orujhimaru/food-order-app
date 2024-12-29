@@ -96,7 +96,7 @@ export default function SettingsProductManagement() {
                   }}
                 >
                   <div className="button-elements-container">
-                    <img src={"/public/save_icon.png"}></img>
+                    <img src={"/src/save_icon.png"}></img>
                     <h4>Save dish</h4>
                   </div>
                 </button>
@@ -112,7 +112,7 @@ export default function SettingsProductManagement() {
                   }}
                 >
                   <div className="button-elements-container">
-                    <img src={"/public/edit-icon.svg"}></img>
+                    <img src={"/src/edit-icon.svg"}></img>
                     <h4>Edit dish</h4>
                   </div>
                 </button>

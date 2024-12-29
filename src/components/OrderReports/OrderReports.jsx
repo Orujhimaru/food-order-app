@@ -75,7 +75,7 @@ function OrderReports() {
         <div ref={dropdown} style={{ position: "relative" }}>
           <DropdownFilter
             setCat={setCat}
-            icon={"/public/filter.svg"}
+            icon={"/src/filter.svg"}
             list={["All", "Completed", "Pending", "Preparing"]}
             filterTopic={"Orders"}
           />

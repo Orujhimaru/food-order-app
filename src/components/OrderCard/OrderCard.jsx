@@ -30,7 +30,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/public/coin.svg"></img>
+            <img src="/src/coin.svg"></img>
           </div>
           <h5>
             +
@@ -48,7 +48,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/public/bookmark.svg"></img>
+            <img src="/src/bookmark.svg"></img>
           </div>
           <h5>
             -
@@ -64,7 +64,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/public/customer.svg"></img>
+            <img src="/src/customer.svg"></img>
           </div>
           <h5>
             +

@@ -28,7 +28,7 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
           <div style={{ position: "relative" }}>
             <DropdownFilter
               setCat={setCat}
-              icon={"/public/mask.svg"}
+              icon={"/src/mask.svg"}
               list={["Today", "Month", "Year"]}
               filterTopic={"Timeframe"}
             />

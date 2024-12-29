@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Sidebar.scss";
-import leftArrow from "/left-arrow.svg";
+import leftArrow from "/src/left-arrow.svg";
 
 function Sidebar() {
   const [isSidebarToggled, setIsSidebarToggled] = useState(false);
