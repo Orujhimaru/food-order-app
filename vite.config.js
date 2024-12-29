@@ -9,4 +9,5 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  host: "vite --host",
 });
