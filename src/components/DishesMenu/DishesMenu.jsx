@@ -42,7 +42,11 @@ function DishesMenu() {
             const { id, image, description, price } = food;
             return (
               <div className="meal-card" key={id}>
-                <img className="meal-image" src={image} alt={description} />
+                <img
+                  className="meal-image"
+                  src={"." + image}
+                  alt={description}
+                />
                 <p className="meal-description">{description}</p>
                 <p className="meal-price">{price}</p>
               </div>
