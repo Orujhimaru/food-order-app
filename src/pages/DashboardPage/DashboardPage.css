@@ -38,6 +38,10 @@
   position: relative;
 }
 
+.most-ordered-container {
+  margin-top: 57px;
+}
+
 .container-40 {
   display: flex;
   flex-direction: column;
@@ -59,4 +63,19 @@
   width: 60%;
   gap: 24px;
   height: 100%;
+}
+
+@media (max-width: 1000px) {
+  .container-100 {
+    flex-direction: column;
+  }
+  .container-60 {
+    width: 100%;
+  }
+  .container-40 {
+    width: 100%;
+  }
+  .circular-report-container {
+    flex-direction: row !important;
+  }
 }/*# sourceMappingURL=DashboardPage.css.map */
