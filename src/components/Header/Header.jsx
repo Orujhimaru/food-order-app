@@ -2,7 +2,7 @@ import "./Header.scss";
 import moment from "moment";
 
 function Header() {
-  const currentDate = moment().format("dddd,d,  MMM YYYY");
+  const currentDate = moment().format("dddd, d MMM YYYY");
 
   return (
     <div className="header">

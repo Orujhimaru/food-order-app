@@ -10,7 +10,6 @@ import { foods, categories } from "@/db/food";
 import { useAuth } from "@/components/AuthProvider";
 import NavBar from "../../components/NavBar/NavBar";
 
-
 function HomePage() {
   const { fireStoreUser } = useAuth();
 
@@ -18,24 +17,16 @@ function HomePage() {
 
   return (
     <div>
-
       <NavBar />
 
       <div className="mainRoot">
         <Header />
 
-
-        <CategoryTabs
-          categories={categories}
-          setCategory={setCategory}
-          category={category}
-        />
-            
         <div className="dishesMen">
           <DishesMenu />
+        </div>
       </div>
     </div>
-</div>
   );
 }
 

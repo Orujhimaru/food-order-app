@@ -12,7 +12,7 @@ export default function OrderCard() {
     () => {
       gsap.from(".num-anim", {
         textContent: 0,
-        duration: 2,
+        duration: 1.5,
         ease: "power1.in",
         snap: { textContent: 1 },
         stagger: {
