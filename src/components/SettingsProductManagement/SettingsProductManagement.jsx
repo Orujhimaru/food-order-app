@@ -8,7 +8,7 @@ import meal1 from "../../assets/Image-2.png";
 import meal2 from "../../assets/Image-3.png";
 import meal3 from "../../assets/Image-5.png";
 import meal4 from "../../assets/Image-6.png";
-import save from "../../assets/save-icon.png";
+import save from "../../assets/save_icon.png";
 import edit from "../../assets/edit-icon.svg.png";
 
 export default function SettingsProductManagement() {
@@ -46,7 +46,7 @@ export default function SettingsProductManagement() {
     arr.push(editedFoodItem);
     setFoodList(arr);
     setEditedFoodItem({});
-    console.log(foodList);
+    // console.log(foodList);
   }
 
   const handleInputChange = (event) => {
@@ -77,7 +77,7 @@ export default function SettingsProductManagement() {
 
   function renderDishes(dishes) {
     let arr = dishes?.map((dish) => {
-      console.log(category);
+      // console.log(category);
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
