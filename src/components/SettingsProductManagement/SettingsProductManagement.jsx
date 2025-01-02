@@ -81,7 +81,7 @@ export default function SettingsProductManagement() {
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
-            <img src={mealList[0 + Math.floor(Math.random() * 4)]}></img>
+            <img src={mealList[dish.id % 4]}></img>
             {editedFoodItem && editedFoodItem.id === dish.id ? (
               <>
                 <input
