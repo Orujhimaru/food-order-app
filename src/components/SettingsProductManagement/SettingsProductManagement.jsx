@@ -92,7 +92,7 @@ export default function SettingsProductManagement() {
                 ></input>
                 <input
                   name="price"
-                  type="text"
+                  type="number"
                   onChange={(event) => handleInput(event)}
                   placeholder={dish.price}
                 ></input>
@@ -111,7 +111,7 @@ export default function SettingsProductManagement() {
             ) : (
               <>
                 <h4>{dish.description}</h4>
-                <h4>{dish.price}</h4>
+                <h4>${dish.price}</h4>
                 <button
                   className="edit-button"
                   onClick={() => {
