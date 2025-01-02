@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { foods, orderTypes } from "../../db/food";
 import "./DishesMenu.scss";
 import meal1 from "../../assets/Image-2.png";
+import meal2 from "../../assets/Image-3.png";
+import meal3 from "../../assets/Image-5.png";
+import meal4 from "../../assets/Image-6.png";
 
 function DishesMenu() {
+  const mealList = [meal1, meal2, meal3, meal4];
   const [orderType, setOrderType] = useState("all");
   const [filteredDishes, setFilteredDishes] = useState(foods);
 
@@ -40,10 +44,14 @@ function DishesMenu() {
       <div className="ordertype-ticket">
         <div className="menu-container">
           {filteredDishes.map((food) => {
-            const { id, image, description, price } = food;
+            const { id, description, price } = food;
             return (
               <div className="meal-card" key={id}>
-                <img className="meal-image" src={meal1} alt={description} />
+                <img
+                  className="meal-image"
+                  src={mealList[0 + Math.floor(Math.random() * 4)]}
+                  alt={description}
+                />
                 <p className="meal-description">{description}</p>
                 <p className="meal-price">{price}</p>
               </div>
