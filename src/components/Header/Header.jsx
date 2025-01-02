@@ -1,6 +1,6 @@
 import "./Header.scss";
 import moment from "moment";
-
+import search from "../../assets/search.png";
 function Header() {
   const currentDate = moment().format("dddd, d MMM YYYY");
 
@@ -11,11 +11,7 @@ function Header() {
         <p>{currentDate}</p>
       </div>
       <div className="headerSearch">
-        <img
-          className="headerIcon"
-          src="src/assets/search.png"
-          alt="Search Icon"
-        />
+        <img className="headerIcon" src={search} alt="Search Icon" />
 
         <input placeholder="Search for food, coffee, etc..." type="text" />
       </div>

@@ -2,6 +2,9 @@ import "./OrderCard.scss";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import coin from "../../coin.svg";
+import bookmark from "../../bookmark.svg";
+import customer from "../../customer.svg";
 
 gsap.registerPlugin(useGSAP);
 
@@ -30,7 +33,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/src/coin.svg"></img>
+            <img src={coin}></img>
           </div>
           <h5>
             +
@@ -48,7 +51,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/src/bookmark.svg"></img>
+            <img src={bookmark}></img>
           </div>
           <h5>
             -
@@ -64,7 +67,7 @@ export default function OrderCard() {
       <div className="order-card">
         <div className="order-flex">
           <div className="icon-container">
-            <img src="/src/customer.svg"></img>
+            <img src={customer}></img>
           </div>
           <h5>
             +

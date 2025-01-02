@@ -2,12 +2,14 @@ import DropdownFilter from "../DropdownFilter/DropdownFilter";
 import { foods } from "@/db/food";
 import "./MostOrderedDishes.scss";
 
+import meal2 from "../../assets/Image-3.png";
+
 export default function MostOrderedDishes() {
   const arr = foods.slice(0, 3);
   let elements = arr.map((food) => {
     return (
       <div className="food-h" key={food.id}>
-        <img src={food.image}></img>
+        <img src={meal2}></img>
         <div className="food-v">
           <h3>{food.description}</h3>
           <h4>200 dishes ordered</h4>

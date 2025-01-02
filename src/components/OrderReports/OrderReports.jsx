@@ -5,6 +5,7 @@ import DropdownFilter from "../DropdownFilter/DropdownFilter";
 import ReportElement from "./ReportElement";
 import { arrOfOrders } from "../../db/data";
 import { useRef } from "react";
+import filter from "../../filter.svg";
 
 // mock data
 function returnOrderReportElements(array) {
@@ -75,7 +76,7 @@ function OrderReports() {
         <div ref={dropdown} style={{ position: "relative" }}>
           <DropdownFilter
             setCat={setCat}
-            icon={"/src/filter.svg"}
+            icon={filter}
             list={["All", "Completed", "Pending", "Preparing"]}
             filterTopic={"Orders"}
           />

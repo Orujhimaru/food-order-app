@@ -1,6 +1,7 @@
 import "./CircularReport.scss";
 import DropdownFilter from "../DropdownFilter/DropdownFilter";
 import { useState } from "react";
+import mask from "../../mask.svg";
 
 import CircularReportAnimation from "./CircularReportAnimation/CircularReportAnimation";
 
@@ -28,7 +29,7 @@ export default function CircularReport({ delivery, toGo, dineIn }) {
           <div style={{ position: "relative" }}>
             <DropdownFilter
               setCat={setCat}
-              icon={"/src/mask.svg"}
+              icon={mask}
               list={["Today", "Month", "Year"]}
               filterTopic={"Timeframe"}
             />
