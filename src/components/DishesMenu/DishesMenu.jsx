@@ -53,7 +53,7 @@ function DishesMenu() {
                   alt={description}
                 />
                 <p className="meal-description">{description}</p>
-                <p className="meal-price">{price}</p>
+                <p className="meal-price">${price}</p>
               </div>
             );
           })}
