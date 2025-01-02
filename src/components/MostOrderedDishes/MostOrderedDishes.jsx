@@ -3,6 +3,7 @@ import { foods } from "@/db/food";
 import "./MostOrderedDishes.scss";
 
 import meal2 from "../../assets/Image-3.png";
+import mask from "../../mask.svg";
 
 export default function MostOrderedDishes() {
   const arr = foods.slice(0, 3);
@@ -24,7 +25,7 @@ export default function MostOrderedDishes() {
         <h3>Most Ordered</h3>
         <DropdownFilter
           setCat={() => {}}
-          icon={"/public/mask.svg"}
+          icon={mask}
           list={["Today", "Month", "Year"]}
           filterTopic={"Today"}
         />
