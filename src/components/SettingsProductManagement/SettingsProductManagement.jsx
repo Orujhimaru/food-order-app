@@ -9,7 +9,7 @@ import meal2 from "../../assets/Image-3.png";
 import meal3 from "../../assets/Image-5.png";
 import meal4 from "../../assets/Image-6.png";
 import save from "../../save_icon.png";
-import edit from "../../edit-icon.svg.png";
+import edit from "../../edit-icon.svg";
 
 export default function SettingsProductManagement() {
   const mealList = [meal1, meal2, meal3, meal4];
