@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { foods, orderTypes } from "../../db/food";
 import "./DishesMenu.scss";
+import meal1 from "../../assets/Image-2.png";
 
 function DishesMenu() {
   const [orderType, setOrderType] = useState("all");
@@ -42,11 +43,7 @@ function DishesMenu() {
             const { id, image, description, price } = food;
             return (
               <div className="meal-card" key={id}>
-                <img
-                  className="meal-image"
-                  src={"." + image}
-                  alt={description}
-                />
+                <img className="meal-image" src={meal1} alt={description} />
                 <p className="meal-description">{description}</p>
                 <p className="meal-price">{price}</p>
               </div>
