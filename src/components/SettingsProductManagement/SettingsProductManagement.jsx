@@ -4,8 +4,15 @@ import { foods, categories } from "@/db/food";
 import CategoryTabs from "@/components/CategoryTabs/CategoryTabs";
 import { useState, useRef } from "react";
 import PopUp from "./PopUp.jsx";
+import meal1 from "../../assets/Image-2.png";
+import meal2 from "../../assets/Image-3.png";
+import meal3 from "../../assets/Image-5.png";
+import meal4 from "../../assets/Image-6.png";
+import save from "../../assets/save-icon.png";
+import edit from "../../assets/edit-icon.svg.png";
 
 export default function SettingsProductManagement() {
+  const mealList = [meal1, meal2, meal3, meal4];
   const [category, setCategory] = useState("all");
   const [foodList, setFoodList] = useState(foods); // yemekler
   const [editedFoodItem, setEditedFoodItem] = useState();
@@ -49,14 +56,14 @@ export default function SettingsProductManagement() {
         [event.target.name]: event.target.value,
         category: categories[event.target.value - 1],
         id: foodList.length + 1,
-        image: "/src/assets/Image-2.png",
+        image: { meal2 },
       });
     } else {
       setEditedFoodItem({
         ...editedFoodItem,
         [event.target.name]: event.target.value,
         id: foodList.length + 1,
-        image: "/src/assets/Image-2.png",
+        image: { meal2 },
       });
     }
   };
@@ -74,7 +81,7 @@ export default function SettingsProductManagement() {
       return (
         (dish.category.key === category || category === "all") && (
           <div className="dish" key={dish.id}>
-            <img src={dish.image}></img>
+            <img src={mealList[0 + Math.floor(Math.random() * 4)]}></img>
             {editedFoodItem && editedFoodItem.id === dish.id ? (
               <>
                 <input
