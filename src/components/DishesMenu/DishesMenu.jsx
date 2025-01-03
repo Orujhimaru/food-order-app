@@ -15,12 +15,20 @@ function DishesMenu({ inputText }) {
     if (orderType === "all" && inputText === "") {
       setFilteredDishes(foods);
     } else {
-      const newFoods = foods.filter((dish) => dish.orderType === orderType);
-      // setFilteredDishes(newFoods);
-      const searchFoods = newFoods.filter((dish) =>
-        dish.description.includes(inputText)
-      );
-      setFilteredDishes(searchFoods);
+      if (orderType === "all") {
+        const searchFoods = foods.filter((dish) =>
+          dish.description.includes(inputText)
+        );
+        console.log(searchFoods);
+        setFilteredDishes(searchFoods);
+      } else {
+        const newFoods = foods.filter((dish) => dish.orderType === orderType);
+        // setFilteredDishes(newFoods);
+        const searchFoods = newFoods.filter((dish) =>
+          dish.description.includes(inputText)
+        );
+        setFilteredDishes(searchFoods);
+      }
     }
   }, [orderType, inputText]);
 
@@ -54,7 +62,7 @@ function DishesMenu({ inputText }) {
               <div className="meal-card" key={id}>
                 <img
                   className="meal-image"
-                  src={mealList[0 + Math.floor(Math.random() * 4)]}
+                  src={mealList[food.id % 4]}
                   alt={description}
                 />
                 <p className="meal-description">{description}</p>
