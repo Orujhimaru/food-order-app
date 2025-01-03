@@ -15,7 +15,7 @@ export default function OrderCard() {
     () => {
       gsap.from(".num-anim", {
         textContent: 0,
-        duration: 1.5,
+        duration: 1,
         ease: "power1.in",
         snap: { textContent: 1 },
         stagger: {
@@ -43,8 +43,10 @@ export default function OrderCard() {
             %
           </h5>
         </div>
-
-        <h3>$10,243.00</h3>
+        <div className="yanyana">
+          <h3>$</h3>
+          <h3 className="num-anim">10243.00</h3>
+        </div>
         <h4>Total revenue</h4>
       </div>
 
@@ -61,7 +63,10 @@ export default function OrderCard() {
             %
           </h5>
         </div>
-        <h3>23,343</h3>
+        <div className="yanyana">
+          <h3>$</h3>
+          <h3 className="num-anim">23343</h3>
+        </div>
         <h4>Total Dish Ordered</h4>
       </div>
       <div className="order-card">
@@ -77,7 +82,10 @@ export default function OrderCard() {
             %
           </h5>
         </div>
-        <h3>1,234</h3>
+        <div className="yanyana">
+          <h3>$</h3>
+          <h3 className="num-anim">1234</h3>
+        </div>
         <h4>Total Customer</h4>
       </div>
     </div>

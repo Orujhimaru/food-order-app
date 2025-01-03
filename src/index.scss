@@ -28,3 +28,8 @@ li {
     display: flex;
   }
 }
+@media (max-width: 768px) {
+  .mainRoot {
+    width: calc(100% - 100px);
+  }
+}
