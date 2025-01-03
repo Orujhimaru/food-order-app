@@ -1,7 +1,7 @@
 import "./Header.scss";
 import moment from "moment";
 import search from "../../assets/search.png";
-function Header() {
+function Header({ onInputChange }) {
   const currentDate = moment().format("dddd, d MMM YYYY");
 
   return (
@@ -12,8 +12,12 @@ function Header() {
       </div>
       <div className="headerSearch">
         <img className="headerIcon" src={search} alt="Search Icon" />
-
-        <input placeholder="Search for food, coffee, etc..." type="text" />
+        <input
+          name="description"
+          type="text"
+          onChange={(event) => onInputChange(event.target.value)}
+          placeholder="Search for food, coffee, etc..."
+        ></input>
       </div>
     </div>
   );

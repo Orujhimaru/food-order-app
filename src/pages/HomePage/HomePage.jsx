@@ -9,19 +9,21 @@ import { useAuth } from "@/components/AuthProvider";
 import NavBar from "../../components/NavBar/NavBar";
 
 function HomePage() {
-  const { fireStoreUser } = useAuth();
+  // const { fireStoreUser } = useAuth();
 
   const [category, setCategory] = useState("all");
+  const [searchResults, setSearchResults] = useState("");
 
   return (
     <div>
       <NavBar />
 
       <div className="mainRoot">
-        <Header />
+        <Header onInputChange={setSearchResults} />
 
         <div className="dishesMen">
-          <DishesMenu />
+          <DishesMenu inputText={searchResults} />
+          {/* searchParameter={a} */}
         </div>
       </div>
     </div>

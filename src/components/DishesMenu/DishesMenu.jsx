@@ -6,18 +6,23 @@ import meal2 from "../../assets/Image-3.png";
 import meal3 from "../../assets/Image-5.png";
 import meal4 from "../../assets/Image-6.png";
 
-function DishesMenu() {
+function DishesMenu({ inputText }) {
   const mealList = [meal1, meal2, meal3, meal4];
   const [orderType, setOrderType] = useState("all");
   const [filteredDishes, setFilteredDishes] = useState(foods);
 
   useEffect(() => {
-    if (orderType === "all") {
+    if (orderType === "all" && inputText === "") {
       setFilteredDishes(foods);
     } else {
-      setFilteredDishes(foods.filter((dish) => dish.orderType === orderType));
+      const newFoods = foods.filter((dish) => dish.orderType === orderType);
+      // setFilteredDishes(newFoods);
+      const searchFoods = newFoods.filter((dish) =>
+        dish.description.includes(inputText)
+      );
+      setFilteredDishes(searchFoods);
     }
-  }, [orderType]);
+  }, [orderType, inputText]);
 
   const handleOrderTypeChange = (event) => {
     setOrderType(event.target.value);
